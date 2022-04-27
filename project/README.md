@@ -12,7 +12,7 @@
 
 ![image](https://user-images.githubusercontent.com/68144687/165510408-0db627a5-6c17-4e4d-9e1e-4cddf87e4581.png)
 
--다음과 같은 오류 발생
+- 다음과 같은 오류 발생
 
 ![image](https://user-images.githubusercontent.com/68144687/165510435-e1e2d6f0-6c46-49c5-9200-8df3fcd38f0d.png)
 
