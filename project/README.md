@@ -5,11 +5,11 @@
 (2022-04-27)
 - subject service의 addSubject, findSubject 구현 완료, 테스트코드 작성
 - home화면 구현(thymeleaf, bootstrap)
-- 
+
 ![image](https://user-images.githubusercontent.com/68144687/165510362-96adf80e-cffb-4c30-884b-6b719c0d81d8.png)
 
 - 회원등록 화면 및 기능 구현 
-- 
+
 ![image](https://user-images.githubusercontent.com/68144687/165510408-0db627a5-6c17-4e4d-9e1e-4cddf87e4581.png)
 
 -다음과 같은 오류 발생
