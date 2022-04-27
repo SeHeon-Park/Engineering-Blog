@@ -18,4 +18,5 @@
 
 (1) 클라이언트에서는 content-type default값인 application/x-www-form-urlencoded으로 보냈지만 apiController의 @RequestsBody를 통해 서버에서는 Json혹은 xml형태로 데이터를 받아서 객체에 mapping하려고 했기 때문임
 
-(2)해결 방법으로는 그냥 @RequestBody를 지워서 x-www-form-urlencoded형태로 주고 받으면 되지만 요즘 추세가 view를 분리시킴(일단 두 코드 분리시켜놓음, 나중에 클라이언트에서 json형태로 데이터를 보내는 코드를 짜야할 필요 있음) 
+(2)해결 방법으로는 그냥 @RequestBody를 지워서 x-www-form-urlencoded형태로 주고 받으면 되지만 요즘 추세가 view를 분리시킴
+(일단 application/x-www-form-urlencoded형태로 주고받는 코드와 json형태로 받는 apiController코드 둘다 짜놓음, 나중에 클라이언트에서 json형태로 데이터를 보내는 코드를 짜야할 필요 있음) 
