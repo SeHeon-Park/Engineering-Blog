@@ -15,13 +15,13 @@ public class Subject {
     @Id
     @GeneratedValue
     @Column(name = "subject_id")
-    private Long id;
+    private Long subjectId;
 
     private String week;
     private String subjectName;
     private int credit;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id")
     private Member member;
 

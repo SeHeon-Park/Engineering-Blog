@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 public class ReviewSubject {
     @Id
     @GeneratedValue
-    private Long id;
+    @Column(name = "review_subject_id")
+    private Long ReviewId;
 
     private LocalDateTime date;
     private String content;

@@ -15,14 +15,14 @@ public class Member {
     @Id
     @GeneratedValue
     @Column(name = "member_id")
-    private Long id;
+    private Long memberId;
 
     private String name;
     private int grade;
     private String studentNumber;
     private String major;
 
-    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "member")
     private List<Subject> subjects = new ArrayList<>();
 
     public Subject addSubject(Subject subject){
@@ -34,5 +34,13 @@ public class Member {
     public Member(String name, String major) {
         this.name = name;
         this.major = major;
+    }
+
+    public Member setMember(String name, int grade, String studentNumber, String major){
+        this.name = name;
+        this.grade = grade;
+        this.studentNumber = studentNumber;
+        this.major = major;
+        return this;
     }
 }

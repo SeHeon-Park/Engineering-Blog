@@ -16,8 +16,17 @@ public class SubjectService {
 
     private final SubjectRepository subjectRepository;
 
+    @Transactional
     public void save(Subject subject){
         subjectRepository.save(subject);
+    }
+
+    public List<Subject> findSubject(Long memberId){
+        return subjectRepository.findSubjectsByMemberId(memberId);
+    }
+
+    public List<Subject> findAll(){
+        return subjectRepository.findAll();
     }
 
     @Transactional
@@ -25,4 +34,6 @@ public class SubjectService {
         member.addSubject(subject);
         subjectRepository.save(subject);
     }
+
+
 }

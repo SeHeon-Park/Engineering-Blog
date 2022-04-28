@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head th:replace="fragments/header :: header">
+    <title>blog</title>
+    <meta http-equiv="content-type" content="application/json; charset=UTF-8">
+</head>
+
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>학년</th>
+                <th>학번</th>
+                <th>전공</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="memberForm : ${memberForms}">
+                <td th:text="${memberForm.memberId}" th:name="memberId"></td>
+                <td th:text="${memberForm.name}" th:name="name"></td>
+                <td th:text="${memberForm.grade}" th:name="grade"></td>
+                <td th:text="${memberForm.studentNumber}" th:name="studentNumber"></td>
+                <td th:text="${memberForm.major}" th:name="major"></td>
+                <td>
+                    <a th:if="${memberForm.memberId != 0}" href="#" th:href="'javascript:login('+${memberForm.memberId}+')'" class="btn btn-check">로그인</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+<script>
+    function login(id) {
+        const form = document.createElement("form");
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/contents/show/" + id);
+        document.body.appendChild(form);
+        form.submit();
+    }
+</script>
+</html>

@@ -16,13 +16,13 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
-    public void join(Member member){
+    public Long join(Member member){
         memberRepository.save(member);
+        return member.getMemberId();
     }
 
-    public List<Subject> showSubject(Member member){
-        return memberRepository.findSubjectsById(member.getId());
+    public List<Member> findAll(){
+        return memberRepository.findAll();
     }
 
 }
-
