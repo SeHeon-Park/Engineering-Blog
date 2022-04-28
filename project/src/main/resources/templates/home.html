@@ -4,16 +4,35 @@
     <title>Hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
+<style>
+    .wrapper {
+        display: grid;
+        place-items: center;
+        min-height: 75vh;
+        background: #f3f3f6;
+    }
+
+    .content {
+        font-family: system-ui, serif;
+        font-size: 2rem;
+        padding: 3rem;
+        border-radius: 1rem;
+    }
+</style>
 <body>
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader" />
     <div class="jumbotron">
+        <div class="wrapper">
+            <div class="content">
         <h1>Engineering Blog</h1>
         <p class="lead">회원 기능</p>
         <p>
             <a class="btn btn-lg btn-secondary" href="/members/new">회원 가입</a>
             <a class="btn btn-lg btn-secondary" href="/members">회원 목록</a>
         </p>
+    </div>
+        </div>
     </div>
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->

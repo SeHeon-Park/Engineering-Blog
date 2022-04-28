@@ -25,4 +25,12 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
+    public Member findOneById(Long id){
+        return memberRepository.findMemberByMemberId(id);
+    }
+
+    @Transactional
+    public void deleteMember(Long memberId) {
+        memberRepository.deleteById(memberId);
+    }
 }

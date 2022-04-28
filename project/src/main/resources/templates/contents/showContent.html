@@ -1,10 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head th:replace="fragments/header :: header">
+    <title>blog</title>
+    <meta http-equiv="content-type" content="application/json; charset=UTF-8">
 </head>
-<body>
 
+<style>
+    .fieldError {
+        border-color: #bd2130;
+    }
+</style>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
+    <br>
+    <h1>
+        <span th:text="${memberForm.name}"></span><!--
+        --><span>님 환영합니다!</span>
+    </h1>
+</div>
 </body>
 </html>

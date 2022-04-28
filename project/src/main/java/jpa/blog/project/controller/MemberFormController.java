@@ -43,9 +43,11 @@ public class MemberFormController {
         return "members/showMembers";
     }
 
-    @GetMapping("/contents/show/{id}")
-    public void showContent(@PathVariable("id") Long id){
-        System.out.println("dsadsadsa "+ id);
+    @PostMapping("/members/{memberId}/delete")
+    public String deleteMember(@PathVariable("memberId") Long memberId){
+        memberService.deleteMember(memberId);
+        return "redirect:/members";
     }
+
 
 }
