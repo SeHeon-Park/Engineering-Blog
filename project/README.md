@@ -24,10 +24,11 @@
 (2022-04-28)
 
 - 회원 목록 화면 구현 및 css
-- 
+
 ![image](https://user-images.githubusercontent.com/68144687/165750801-cae51b5f-77ee-484e-8140-341552154c28.png)
 
 ![image](https://user-images.githubusercontent.com/68144687/165751008-3ad7e1da-4ef9-4ba8-9aa2-6e1941a142e0.png) 
+-------------------------------------------------------------------------
 ![image](https://user-images.githubusercontent.com/68144687/165751022-739fd67b-1a6c-4501-b882-b069d7a4d7cb.png)
 
 - login: contents를 볼수 있는 페이지로 넘어감, delete: 경고창이 나온 후 삭제됨
