@@ -32,6 +32,7 @@
 ![image](https://user-images.githubusercontent.com/68144687/165751022-739fd67b-1a6c-4501-b882-b069d7a4d7cb.png)
 
 - login: contents를 볼수 있는 페이지로 넘어감, delete: 경고창이 나온 후 삭제됨
+
 - login기능을 구현 할때 view에서 controller로 사용자의 데이터가 넘어가지 않았음, 다음과 같이 해결
 
 ![image](https://user-images.githubusercontent.com/68144687/165751159-d8f4b8c4-e1ce-4445-982e-68c17e88d514.png)
