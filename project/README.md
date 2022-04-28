@@ -25,8 +25,8 @@
 
 - 회원 목록 화면 구현 및 css
 
+![image](https://user-images.githubusercontent.com/68144687/165752089-9acfa16d-4c66-46dc-b74f-8b0f6412ccb7.png)
 
-![image](https://user-images.githubusercontent.com/68144687/165751008-3ad7e1da-4ef9-4ba8-9aa2-6e1941a142e0.png) 
 
 ![image](https://user-images.githubusercontent.com/68144687/165751022-739fd67b-1a6c-4501-b882-b069d7a4d7cb.png)
 (경고창)
