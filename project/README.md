@@ -2,6 +2,7 @@
 - entity, repository, member service 구현.
 - subject service 구현중 addsubject기능에서 오류 발견(h2버전문제, 해결)
 
+
 (2022-04-27)
 - subject service의 addSubject, findSubject 구현 완료, 테스트코드 작성
 - home화면 구현(thymeleaf, bootstrap)
@@ -21,8 +22,8 @@
 (2)해결 방법으로는 그냥 @RequestBody를 지워서 x-www-form-urlencoded형태로 주고 받으면 되지만 요즘 추세가 view를 분리시킴
 (일단 application/x-www-form-urlencoded형태로 주고받는 코드와 json형태로 받는 apiController코드 둘다 짜놓음, 나중에 클라이언트에서 json형태로 데이터를 보내는 코드를 짜야할 필요 있음) 
 
-(2022-04-28)
 
+(2022-04-28)
 - 회원 목록 화면 구현 및 css
 
 ![image](https://user-images.githubusercontent.com/68144687/165752089-9acfa16d-4c66-46dc-b74f-8b0f6412ccb7.png)
@@ -39,7 +40,6 @@
 
 
 (2022-04-29)
-
 - login클릭 후 과목 정보 화면 구현
 
 (요일별)
