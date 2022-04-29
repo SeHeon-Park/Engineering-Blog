@@ -40,7 +40,7 @@
 
 
 (2022-04-29)
-- login클릭 후 과목 정보 화면 구현
+- login클릭 후 과목 정보 출력 화면 구현
 
 (요일별)
 
@@ -56,5 +56,5 @@
 
 - QueryDsl과 mvc부분을 연습하고자 검색기능을 추가함, 나중에 깔끔하게 요일별로만 바꿀 것
 (querydsl코드: repository-SubjectRepositoryQuery)
-- thymleaf부분에서 @ModelAttribute어노테이션과 form 태그를 이용해서 controller로 데이터를 전송하는 부분에서 시간을 많이 씀, 공부필요
+- thymleaf부분에서 @ModelAttribute어노테이션의 활용과 form 태그를 이용해서 controller로 데이터를 전송하는 부분에서 시간을 많이 씀, 공부필요
 - 회원 delete시 오류 발생 => 외래키문제, member엔티티에 CascadeType.All을 추가하여 해결
