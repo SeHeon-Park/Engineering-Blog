@@ -41,15 +41,15 @@
 (2022-04-29)
 - login클릭 후 과목 정보 화면 구현
 
+(요일별)
 ![image](https://user-images.githubusercontent.com/68144687/165969225-dfcdc777-936f-4143-863b-b7687066fe8c.png)
 
-(요일별)
+
 - 라디오 type에서 두번체크시 해제되는 기능 구현해야 함
 
+(과목이름 별)
 ![image](https://user-images.githubusercontent.com/68144687/165969744-6d914e5a-b4dc-4b1e-9201-ef1b5744a585.png)
 
-
-(과목이름 별)
 
 - QueryDsl과 mvc부분을 연습하고자 검색기능을 추가함, 나중에 깔끔하게 요일별로만 바꿀 것
 (querydsl코드: repository-SubjectRepositoryQuery)
