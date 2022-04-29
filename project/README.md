@@ -44,7 +44,8 @@
 
 (요일별)
 
-![image](https://user-images.githubusercontent.com/68144687/165969225-dfcdc777-936f-4143-863b-b7687066fe8c.png)
+![image](https://user-images.githubusercontent.com/68144687/165972162-1715b376-18d9-4e72-a796-26a112d34c8f.png)
+
 
 - 라디오 type에서 두번체크시 해제되는 기능 구현해야 함
 
