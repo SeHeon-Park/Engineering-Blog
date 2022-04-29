@@ -1,15 +1,15 @@
 package jpa.blog.project.repository;
 
-import com.querydsl.core.types.ExpressionUtils;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import jpa.blog.project.Entity.QSubject;
 import jpa.blog.project.Entity.Subject;
-import jpa.blog.project.Entity.SubjectWeek;
+import jpa.blog.project.Entity.SearchSubject;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -17,18 +17,34 @@ import java.util.List;
 public class SubjectRepositoryQuery {
     private final EntityManager em;
 
-    public List<Subject> findAllBySubjectWeek(SubjectWeek subjectWeek){
+    public List<Subject> findAllByInput(SearchSubject searchSubject, Long id) {
         JPAQueryFactory query = new JPAQueryFactory(em);
         QSubject subject = QSubject.subject;
-        return query
-                .select(subject)
-                .from(subject)
-                .where(
-                        ExpressionUtils.or(
-                        weekEq(subjectWeek.getWeek()),
-                        nameEq(subjectWeek.getSubjectName()))
-                )
-                .fetch();
+        List<Subject> empty = new ArrayList<>();
+
+        if (searchSubject.getWeek() != null && searchSubject.getSubjectName() != null && searchSubject.getSubjectName() != ""){
+            return query
+                    .select(subject)
+                    .from(subject)
+                    .where(QSubject.subject.member.memberId.eq(id), weekEq(searchSubject.getWeek()), nameEq(searchSubject.getSubjectName()))
+                    .fetch();
+        }
+
+        if (searchSubject.getWeek() != null) {
+            return query
+                    .select(subject)
+                    .from(subject)
+                    .where(QSubject.subject.member.memberId.eq(id), weekEq(searchSubject.getWeek()))
+                    .fetch();
+        }
+        if (searchSubject.getSubjectName() != null && searchSubject.getSubjectName() != "") {
+            return query
+                    .select(subject)
+                    .from(subject)
+                    .where(QSubject.subject.member.memberId.eq(id), nameEq(searchSubject.getSubjectName()))
+                    .fetch();
+        }
+        return empty;
     }
 
     private BooleanExpression weekEq(String week){
@@ -42,6 +58,6 @@ public class SubjectRepositoryQuery {
         if (name == null) {
             return null;
         }
-        return QSubject.subject.subjectName.eq(name);
+        return QSubject.subject.subjectName.contains(name);
     }
 }

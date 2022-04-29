@@ -42,6 +42,7 @@ public class MemberFormController {
         model.addAttribute("memberForms", memberForms);
         return "members/showMembers";
     }
+
     @PostMapping("/members/{memberId}/delete")
     public String deleteMember(@PathVariable("memberId") Long memberId) {
         memberService.deleteMember(memberId);

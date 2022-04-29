@@ -13,25 +13,55 @@
 <body>
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
-    <div>
-        <form th:object="${subjectWeek}" class="form-inline">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>
-                    <input th:field="*{week}" class="btn btn-success" placeholder="과목명 혹은 요일을 입력하세요"/></input></th>
-                <th>
-                    <button type="submit" class="btn btn-primary mb-2">검색</button></th>
+    <div class="jumbotron"></div>
+    <div class="form-group">
+    <b>과목명 혹은 요일 검색</b>
+<!--        <select id="search" th:field="*{searchSubject}" class = "form-select"-->
+<!--        onclick="selcetedVal(this)">-->
+<!--            <option value="">검색 내용 선택</option>-->
+<!--            <option th:value="${searchSubject.subjectName}">과목</option>-->
+<!--            <option th:value="${searchSubject.week}">요일</option>-->
+<!--        </select>-->
+    <br>
+    <form  th:object="${searchSubject}" class="form-inline">
+        <input type="text" th:field="*{subjectName}" class="formcontrol" placeholder="과목명을 입력하세요"/></input>
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="월"/>월
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="화"/>화
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="수"/>수
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="목"/>목
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="금"/>금
+        <button type="submit" class="btn btn-primary mb-2">검색</button></th>
+        <br>
+    </form>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>과목명</th>
+            <th>학점</th>
+            <th>요일</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="subject : ${subjectForms}">
+                <td th:text="${subject.subjectName}"></td>
+                <td th:text="${subject.credit}"></td>
+                <td th:text="${subject.week}"></td>
             </tr>
-            </thead>
-        </table>
-        </form>
-    </div>
-            <div th:each="subject : ${subjectForms}">
-                <span th:text="${subject.subjectName} "></span>
-                <span th:text="${subject.credit}"></span><span>학점</span>
-            </div>
+        </tbody>
+    </table>
 </div>
 <div th:replace="fragments/footer :: footer"></div>
+</div>
 </body>
+<script>
+    function check(val) {
+        if (val.checked === true) {
+            val.checked = false;
+        }
+        if (val.checked===false) {
+            val.checked = true;
+        }
+    }
+</script>
+
 </html>

@@ -27,6 +27,8 @@ class SubjectServiceTest {
     @Test
     public void addSubjectTest(){
         Member m = new Member("박세헌", "컴퓨터전자시스템공학부");
+        m.setGrade(4);
+        m.setStudentNumber("201701234");
         memberService.join(m);
 //        Subject s1 = new Subject("프로그래밍 어론", 3);
 //        Subject s2 = new Subject("빅데이터 처리", 3);
@@ -36,8 +38,26 @@ class SubjectServiceTest {
 //        List<Subject> findResult = subjectService.findSubject(m.getMemberId());
 //        findResult.forEach(s->assertThat(s.getMember().getMemberId()).isEqualTo(m.getMemberId()));
 
-        Subject subject = new Subject("고급문제해결", 3);
-        subject.setWeek("금");
-        subjectService.addSubject(m, subject);
+        Subject s1 = new Subject("고급문제해결", 3);
+        s1.setWeek("금");
+        Subject s2 = new Subject("빅데이터처리", 3);
+        s2.setWeek("금");
+        Subject s3 = new Subject("캡스톤설계", 3);
+        s3.setWeek("금");
+        Subject s4 = new Subject("프로그래밍어론", 3);
+        s4.setWeek("금");
+        Subject s5 = new Subject("기초회화연습", 2);
+        s5.setWeek("금");
+        Subject s6 = new Subject("일본어강독연습", 2);
+        s6.setWeek("금");
+        Subject s7 = new Subject("고급문제처리", 2);
+        s7.setWeek("금");
+        subjectService.addSubject(m, s1);
+        subjectService.addSubject(m, s2);
+        subjectService.addSubject(m, s3);
+        subjectService.addSubject(m, s4);
+        subjectService.addSubject(m, s5);
+        subjectService.addSubject(m, s6);
+        subjectService.addSubject(m, s7);
     }
 }
