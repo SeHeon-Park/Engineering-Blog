@@ -2,6 +2,7 @@
 - entity, repository, member service 구현.
 - subject service 구현중 addsubject기능에서 오류 발견(h2버전문제, 해결)
 
+
 (2022-04-27)
 - subject service의 addSubject, findSubject 구현 완료, 테스트코드 작성
 - home화면 구현(thymeleaf, bootstrap)
@@ -21,8 +22,8 @@
 (2)해결 방법으로는 그냥 @RequestBody를 지워서 x-www-form-urlencoded형태로 주고 받으면 되지만 요즘 추세가 view를 분리시킴
 (일단 application/x-www-form-urlencoded형태로 주고받는 코드와 json형태로 받는 apiController코드 둘다 짜놓음, 나중에 클라이언트에서 json형태로 데이터를 보내는 코드를 짜야할 필요 있음) 
 
-(2022-04-28)
 
+(2022-04-28)
 - 회원 목록 화면 구현 및 css
 
 ![image](https://user-images.githubusercontent.com/68144687/165752089-9acfa16d-4c66-46dc-b74f-8b0f6412ccb7.png)
@@ -38,3 +39,22 @@
 ![image](https://user-images.githubusercontent.com/68144687/165751172-492f5c17-2663-4feb-9a42-fbbf9cbda98b.png)
 
 
+(2022-04-29)
+- login클릭 후 과목 정보 화면 구현
+
+(요일별)
+
+![image](https://user-images.githubusercontent.com/68144687/165972579-4475bf88-24d2-4914-85c7-1bfb7cc3eeca.png)
+
+- 라디오 type에서 두번체크시 해제되는 기능 구현해야 함
+
+
+(과목이름 별)
+
+![image](https://user-images.githubusercontent.com/68144687/165972589-5c308984-b5de-4639-9690-5b182d5f1d09.png)
+
+
+- QueryDsl과 mvc부분을 연습하고자 검색기능을 추가함, 나중에 깔끔하게 요일별로만 바꿀 것
+(querydsl코드: repository-SubjectRepositoryQuery)
+- thymleaf부분에서 @ModelAttribute어노테이션과 form 태그를 이용해서 controller로 데이터를 전송하는 부분에서 시간을 많이 씀, 공부필요
+- 회원 delete시 오류 발생 => 외래키문제, member엔티티에 CascadeType.All을 추가하여 해결
