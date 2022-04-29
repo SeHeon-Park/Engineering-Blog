@@ -28,12 +28,16 @@ class SubjectServiceTest {
     public void addSubjectTest(){
         Member m = new Member("박세헌", "컴퓨터전자시스템공학부");
         memberService.join(m);
-        Subject s1 = new Subject("프로그래밍 어론", 3);
-        Subject s2 = new Subject("빅데이터 처리", 3);
-        subjectService.addSubject(m, s1);
-        subjectService.addSubject(m, s2);
+//        Subject s1 = new Subject("프로그래밍 어론", 3);
+//        Subject s2 = new Subject("빅데이터 처리", 3);
+//        subjectService.addSubject(m, s1);
+//        subjectService.addSubject(m, s2);
+//
+//        List<Subject> findResult = subjectService.findSubject(m.getMemberId());
+//        findResult.forEach(s->assertThat(s.getMember().getMemberId()).isEqualTo(m.getMemberId()));
 
-        List<Subject> findResult = subjectService.findSubject(m.getMemberId());
-        findResult.forEach(s->assertThat(s.getMember().getMemberId()).isEqualTo(m.getMemberId()));
+        Subject subject = new Subject("고급문제해결", 3);
+        subject.setWeek("금");
+        subjectService.addSubject(m, subject);
     }
 }

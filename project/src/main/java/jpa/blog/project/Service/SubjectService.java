@@ -2,7 +2,9 @@ package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.Subject;
+import jpa.blog.project.Entity.SubjectWeek;
 import jpa.blog.project.repository.SubjectRepository;
+import jpa.blog.project.repository.SubjectRepositoryQuery;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +17,7 @@ import java.util.List;
 public class SubjectService {
 
     private final SubjectRepository subjectRepository;
+    private final SubjectRepositoryQuery subjectRepositoryQuery;
 
     @Transactional
     public void save(Subject subject){
@@ -27,6 +30,10 @@ public class SubjectService {
 
     public List<Subject> findAll(){
         return subjectRepository.findAll();
+    }
+
+    public List<Subject> findAllByWeek(SubjectWeek subjectWeek){
+        return subjectRepositoryQuery.findAllBySubjectWeek(subjectWeek);
     }
 
     @Transactional
