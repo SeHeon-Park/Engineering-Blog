@@ -33,7 +33,7 @@
 (경고창)
 - login: contents를 볼수 있는 페이지로 넘어감, delete: 경고창이 나온 후 삭제됨
 
-- login기능을 구현 할때 view에서 controller로 사용자의 데이터가 넘어가지 않았음, 다음과 같이 해결
+- login기능을 구현 할때 view에서 controller로 사용자의 데이터가 넘어가지 않았음, 자바스크립트 활용
 
 ![image](https://user-images.githubusercontent.com/68144687/165751159-d8f4b8c4-e1ce-4445-982e-68c17e88d514.png)
 ![image](https://user-images.githubusercontent.com/68144687/165751172-492f5c17-2663-4feb-9a42-fbbf9cbda98b.png)
