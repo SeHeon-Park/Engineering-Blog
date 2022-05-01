@@ -54,7 +54,7 @@
 ![image](https://user-images.githubusercontent.com/68144687/165972589-5c308984-b5de-4639-9690-5b182d5f1d09.png)
 
 
-- QueryDsl과 mvc부분을 연습하고자 검색기능을 추가함, 나중에 깔끔하게 요일별로만 바꿀 것
+- QueryDsl과 mvc부분을 연습하고자 검색기능을 추가, 나중에 깔끔하게 요일별로만 바꿀 것
 (querydsl코드: repository-SubjectRepositoryQuery)
 - thymleaf부분에서 @ModelAttribute어노테이션의 활용과 form 태그를 이용해서 controller로 데이터를 전송하는 부분에서 시간을 많이 씀, 공부필요
 - 회원 delete시 오류 발생 => 외래키문제, member엔티티에 CascadeType.All을 추가하여 해결
