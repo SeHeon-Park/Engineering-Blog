@@ -2,7 +2,7 @@ package jpa.blog.project.controller;
 
 import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.Subject;
-import jpa.blog.project.Entity.SubjectWeek;
+import jpa.blog.project.Entity.SearchSubject;
 import jpa.blog.project.Service.MemberService;
 import jpa.blog.project.Service.SubjectService;
 import jpa.blog.project.form.MemberForm;
@@ -24,28 +24,15 @@ public class ContentsController {
     private final MemberService memberService;
     private final SubjectService subjectService;
 
-    @GetMapping("/contents/show/{id}")
-    public String showContent(@ModelAttribute("subjectWeek") SubjectWeek subjectWeek,
-                              @PathVariable("id") Long id, Model model){
-        Member findMember = memberService.findOneById(id);
-        MemberForm memberForm = new MemberForm(findMember.getMemberId(), findMember.getName(), findMember.getGrade(), findMember.getStudentNumber(), findMember.getMajor());
-        model.addAttribute("memberForm", memberForm);
 
-        System.out.println(subjectWeek.getWeek());
-        List<Subject> findSubject = subjectService.findAllByWeek(subjectWeek);
+    @GetMapping("/contents/show/{id}")
+    public String showContent(@ModelAttribute("searchSubject") SearchSubject searchSubject,
+                              @PathVariable("id") Long id, Model model){
+        System.out.println(searchSubject.getWeek());
+        List<Subject> findSubject = subjectService.findAllByInput(searchSubject, id);
         List<SubjectForm> subjectForms = findSubject.stream().map(s -> new SubjectForm(s.getWeek(), s.getSubjectName(), s.getCredit())).collect(Collectors.toList());
         model.addAttribute("subjectForms", subjectForms);
         return "contents/showContent";
     }
 
-
-
-//    @GetMapping(value = "/orders/show")
-//    public String orderList(@ModelAttribute("orderSearch") OrderSearch orderSearch, Model model) {
-//        List<Order> orders = orderService.findOrders(orderSearch);
-//        model.addAttribute("orders", orders);
-//
-//
-//
-//    }
 }

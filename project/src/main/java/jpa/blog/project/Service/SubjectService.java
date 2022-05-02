@@ -2,7 +2,7 @@ package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.Subject;
-import jpa.blog.project.Entity.SubjectWeek;
+import jpa.blog.project.Entity.SearchSubject;
 import jpa.blog.project.repository.SubjectRepository;
 import jpa.blog.project.repository.SubjectRepositoryQuery;
 import lombok.RequiredArgsConstructor;
@@ -32,8 +32,8 @@ public class SubjectService {
         return subjectRepository.findAll();
     }
 
-    public List<Subject> findAllByWeek(SubjectWeek subjectWeek){
-        return subjectRepositoryQuery.findAllBySubjectWeek(subjectWeek);
+    public List<Subject> findAllByInput(SearchSubject subjectWeek, Long id){
+        return subjectRepositoryQuery.findAllByInput(subjectWeek, id);
     }
 
     @Transactional

@@ -33,4 +33,8 @@ public class Subject {
         this.subjectName = subjectName;
         this.credit = credit;
     }
+
+    public Long getMemberId(){
+        return this.getMember().getMemberId();
+    }
 }

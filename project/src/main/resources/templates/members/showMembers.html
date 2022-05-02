@@ -31,10 +31,12 @@
                 <td th:text="${memberForm.studentNumber}"></td>
                 <td th:text="${memberForm.major}"></td>
                 <td>
-                    <a href="#" th:href="'javascript:login('+${memberForm.memberId}+')'" class="btn btn-success">login</a>
+                    <a href="#" th:href="'javascript:login('+${memberForm.memberId}+')'"
+                       class="btn btn-success">login</a>
                 </td>
                 <td>
-                    <a href="#" th:href="'javascript:remove('+${memberForm.memberId}+')'" class="btn btn-danger">delete</a>
+                    <a href="#" th:href="'javascript:remove('+${memberForm.memberId}+')'"
+                       class="btn btn-danger">delete</a>
                 </td>
             </tr>
             </tbody>

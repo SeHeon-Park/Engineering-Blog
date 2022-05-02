@@ -22,7 +22,7 @@ public class Member {
     private String studentNumber;
     private String major;
 
-    @OneToMany(mappedBy = "member")
+    @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<Subject> subjects = new ArrayList<>();
 
     public Subject addSubject(Subject subject){
