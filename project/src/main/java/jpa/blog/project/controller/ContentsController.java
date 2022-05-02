@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,16 +22,15 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class ContentsController {
 
-    private final MemberService memberService;
     private final SubjectService subjectService;
-
+    private final MemberService memberService;
 
     @GetMapping("/contents/show/{id}")
     public String showContent(@ModelAttribute("searchSubject") SearchSubject searchSubject,
                               @PathVariable("id") Long id, Model model){
-        System.out.println(searchSubject.getWeek());
         List<Subject> findSubject = subjectService.findAllByInput(searchSubject, id);
         List<SubjectForm> subjectForms = findSubject.stream().map(s -> new SubjectForm(s.getWeek(), s.getSubjectName(), s.getCredit())).collect(Collectors.toList());
+        model.addAttribute("memberId", id);
         model.addAttribute("subjectForms", subjectForms);
         return "contents/showContent";
     }

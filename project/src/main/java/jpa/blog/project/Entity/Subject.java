@@ -29,7 +29,8 @@ public class Subject {
     @OneToMany(mappedBy = "subject")
     private List<ReviewSubject> reviewSubjects = new ArrayList<>();
 
-    public Subject(String subjectName, int credit) {
+    public Subject(String week, String subjectName, int credit) {
+        this.week = week;
         this.subjectName = subjectName;
         this.credit = credit;
     }

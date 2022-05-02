@@ -16,23 +16,19 @@
     <div class="jumbotron"></div>
     <div class="form-group">
     <b>과목명 혹은 요일 검색</b>
-<!--        <select id="search" th:field="*{searchSubject}" class = "form-select"-->
-<!--        onclick="selcetedVal(this)">-->
-<!--            <option value="">검색 내용 선택</option>-->
-<!--            <option th:value="${searchSubject.subjectName}">과목</option>-->
-<!--            <option th:value="${searchSubject.week}">요일</option>-->
-<!--        </select>-->
     <br>
-    <form  th:object="${searchSubject}" class="form-inline">
+    <form th:object="${searchSubject}" class="form-inline">
         <input type="text" th:field="*{subjectName}" class="formcontrol" placeholder="과목명을 입력하세요"/></input>
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="월"/>월
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="화"/>화
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="수"/>수
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="목"/>목
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week" onclick="check(this)" value="금"/>금
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week1" value="월"/>월
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week2" value="화"/>화
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week3" value="수"/>수
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week4" value="목"/>목
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week5" value="금"/>금
         <button type="submit" class="btn btn-primary mb-2">검색</button></th>
-        <br>
-    </form>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        <a  href="#" th:href="'javascript:createSubject('+${memberId}+')'"
+           class="btn btn-outline-danger">과목 추가</a>
+        </form>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -43,7 +39,7 @@
         </thead>
         <tbody>
             <tr th:each="subject : ${subjectForms}">
-                <td th:text="${subject.subjectName}"></td>
+                <td href="#" th:text="${subject.subjectName}"></td>
                 <td th:text="${subject.credit}"></td>
                 <td th:text="${subject.week}"></td>
             </tr>
@@ -54,14 +50,21 @@
 </div>
 </body>
 <script>
-    function check(val) {
-        if (val.checked === true) {
-            val.checked = false;
-        }
-        if (val.checked===false) {
-            val.checked = true;
-        }
+    if ($('input:radio[name=week1]').is(':checked')){
+        $('input:radio[name=week1]').prop("checked", false);
     }
+    else{
+        $('input:radio[name=week1]').prop("checked", true);
+    }
+
+    function createSubject(id){
+        const form = document.createElement("form");
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/subject/new/" + id);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
 </script>
 
 </html>

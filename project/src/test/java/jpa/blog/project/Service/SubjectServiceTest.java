@@ -38,20 +38,13 @@ class SubjectServiceTest {
 //        List<Subject> findResult = subjectService.findSubject(m.getMemberId());
 //        findResult.forEach(s->assertThat(s.getMember().getMemberId()).isEqualTo(m.getMemberId()));
 
-        Subject s1 = new Subject("고급문제해결", 3);
-        s1.setWeek("금");
-        Subject s2 = new Subject("빅데이터처리", 3);
-        s2.setWeek("금");
-        Subject s3 = new Subject("캡스톤설계", 3);
-        s3.setWeek("금");
-        Subject s4 = new Subject("프로그래밍어론", 3);
-        s4.setWeek("금");
-        Subject s5 = new Subject("기초회화연습", 2);
-        s5.setWeek("금");
-        Subject s6 = new Subject("일본어강독연습", 2);
-        s6.setWeek("금");
-        Subject s7 = new Subject("고급문제처리", 2);
-        s7.setWeek("금");
+        Subject s1 = new Subject("금", "고급문제해결", 3);
+        Subject s2 = new Subject("금", "빅데이터처리", 3);
+        Subject s3 = new Subject("금", "캡스톤설계", 3);
+        Subject s4 = new Subject("금", "프로그래밍어론", 3);
+        Subject s5 = new Subject("금", "기초회화연습", 2);
+        Subject s6 = new Subject("금", "일본어강독연습", 2);
+        Subject s7 = new Subject("금", "고급문제처리", 2);
         subjectService.addSubject(m, s1);
         subjectService.addSubject(m, s2);
         subjectService.addSubject(m, s3);
