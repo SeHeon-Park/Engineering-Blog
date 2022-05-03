@@ -58,3 +58,30 @@
 (querydsl코드: repository-SubjectRepositoryQuery)
 - thymleaf부분에서 @ModelAttribute어노테이션의 활용과 form 태그를 이용해서 controller로 데이터를 전송하는 부분에서 시간을 많이 씀, 공부필요
 - 회원 delete시 오류 발생 => 외래키문제, member엔티티에 CascadeType.All을 추가하여 해결
+
+
+(2022-05-02)
+- 과목 추가 기능 구현
+
+(과목 추가 버튼)
+
+![image](https://user-images.githubusercontent.com/68144687/166415218-55d4fc9d-8eb9-4887-9e7a-0afff9da6fc1.png)
+
+
+(과목 추가 화면)
+
+![image](https://user-images.githubusercontent.com/68144687/166415234-d862f60c-0127-4a4d-a621-dc3fbbfa8f0f.png)
+
+
+(결과)
+
+![image](https://user-images.githubusercontent.com/68144687/166415251-264abe3d-7a5a-44c0-b2cd-3c0156298423.png)
+
+
+- 과목 추가 할시 과목 출력 화면으로 되돌아 오는데 member의 id값이 pathvariable로 넘어와야 한다. 하지만 form태그에서 해결할 수 가 없어 고민을 하던중 자바스크립트로 해결하였다.
+
+<script th:inline="javascript">
+    let id = [[${memberId}]];
+    let form = document.getElementById("form1");
+    form.setAttribute("action", "/subject/new/" + id);
+</script>
