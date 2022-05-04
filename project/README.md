@@ -78,7 +78,7 @@
 ![image](https://user-images.githubusercontent.com/68144687/166415251-264abe3d-7a5a-44c0-b2cd-3c0156298423.png)
 
 
-- 과목 추가 할시 과목 출력 화면으로 되돌아 오는데 member의 id값이 pathvariable로 넘어와야 한다. 하지만 form태그에서 해결할 수 가 없어 고민을 하던중 자바스크립트로 해결하였다.
+- 과목 추가 할시 과목 출력 화면으로 되돌아 오는데 member의 id값이 pathvariable로 넘어와야 함. 하지만 form태그에서 해결할 수 가 없어 고민을 하던중 자바스크립트로 해결.
 (/contents/show/52?)
 
 ![image](https://user-images.githubusercontent.com/68144687/166415758-69893c3b-5b6d-4639-925c-a2a50c029c9c.png)
