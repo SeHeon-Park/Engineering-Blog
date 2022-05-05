@@ -25,7 +25,7 @@
         <input type="radio" th:field="*{week}" class="formcontrol" name="week4" value="목"/>목
         <input type="radio" th:field="*{week}" class="formcontrol" name="week5" value="금"/>금
         <button type="submit" class="btn btn-primary mb-2">검색</button></th>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;&nbsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a  href="#" th:href="'javascript:createSubject('+${memberId}+')'"
            class="btn btn-outline-danger">과목 추가</a>
         </form>
@@ -42,6 +42,11 @@
                 <td href="#" th:text="${subject.subjectName}"></td>
                 <td th:text="${subject.credit}"></td>
                 <td th:text="${subject.week}"></td>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <td>
+                    <a href="#" th:href="'javascript:review('+${subject.subjectId}+')'"
+                       class="btn btn-success">Review</a>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -61,6 +66,14 @@
         const form = document.createElement("form");
         form.setAttribute("method", "GET");
         form.setAttribute("action", "/subject/new/" + id);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function review(id){
+        const form = document.createElement("form");
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/reviewList/"+id);
         document.body.appendChild(form);
         form.submit();
     }

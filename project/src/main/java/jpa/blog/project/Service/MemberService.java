@@ -1,7 +1,6 @@
 package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
-import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,7 +24,7 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Member findOneById(Long id){
+    public Member findOneBySubjectId(Long id){
         return memberRepository.findMemberByMemberId(id);
     }
 

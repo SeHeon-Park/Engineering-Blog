@@ -29,7 +29,7 @@ public class ContentsController {
     public String showContent(@ModelAttribute("searchSubject") SearchSubject searchSubject,
                               @PathVariable("id") Long id, Model model){
         List<Subject> findSubject = subjectService.findAllByInput(searchSubject, id);
-        List<SubjectForm> subjectForms = findSubject.stream().map(s -> new SubjectForm(s.getWeek(), s.getSubjectName(), s.getCredit())).collect(Collectors.toList());
+        List<SubjectForm> subjectForms = findSubject.stream().map(s -> new SubjectForm(s.getSubjectId(), s.getWeek(), s.getSubjectName(), s.getCredit())).collect(Collectors.toList());
         model.addAttribute("memberId", id);
         model.addAttribute("subjectForms", subjectForms);
         return "contents/showContent";

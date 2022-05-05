@@ -10,4 +10,6 @@ import java.util.List;
 public interface SubjectRepository extends JpaRepository<Subject, Long> {
     @Query("select s from Subject s where s.member.memberId = :memberId")
     List<Subject> findSubjectsByMemberId(@Param("memberId") Long memberId);
+
+    Subject findSubjectBySubjectId(Long id);
 }

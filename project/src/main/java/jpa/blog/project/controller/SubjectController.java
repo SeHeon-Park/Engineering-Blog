@@ -28,7 +28,7 @@ public class SubjectController {
     @PostMapping("/subject/new/{memberId}")
     public String createSubject(@PathVariable("memberId") Long memberId, SubjectForm subjectForm){
         System.out.println(memberId);
-        Member findMember = memberService.findOneById(memberId);
+        Member findMember = memberService.findOneBySubjectId(memberId);
         Subject subject = new Subject(subjectForm.getWeek(), subjectForm.getSubjectName(), subjectForm.getCredit());
         subjectService.addSubject(findMember, subject);
         return "redirect:/contents/show/{memberId}";

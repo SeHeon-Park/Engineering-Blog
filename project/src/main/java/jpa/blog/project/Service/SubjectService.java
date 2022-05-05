@@ -36,6 +36,10 @@ public class SubjectService {
         return subjectRepositoryQuery.findAllByInput(subjectWeek, id);
     }
 
+    public Subject findById(Long subjectId){
+        return subjectRepository.findSubjectBySubjectId(subjectId);
+    }
+
     @Transactional
     public void addSubject(Member member, Subject subject){
         member.addSubject(subject);

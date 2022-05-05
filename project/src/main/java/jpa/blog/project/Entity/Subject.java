@@ -38,4 +38,9 @@ public class Subject {
     public Long getMemberId(){
         return this.getMember().getMemberId();
     }
+
+    public void addReviewSubject(ReviewSubject reviewSubject){
+        reviewSubjects.add(reviewSubject);
+        reviewSubject.setSubject(this);
+    }
 }

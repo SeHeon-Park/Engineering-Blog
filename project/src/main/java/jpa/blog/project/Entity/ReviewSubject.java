@@ -1,23 +1,33 @@
 package jpa.blog.project.Entity;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor
 public class ReviewSubject {
     @Id
     @GeneratedValue
     @Column(name = "review_subject_id")
     private Long ReviewId;
 
-    private LocalDateTime date;
+    private String title;
     private String content;
+    private LocalDate day;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "subject_id")
     private Subject subject;
+
+    public ReviewSubject(String title, String content, LocalDate day) {
+        this.title = title;
+        this.content = content;
+        this.day = day;
+    }
 }
