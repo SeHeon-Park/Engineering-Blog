@@ -83,3 +83,15 @@
 
 ![image](https://user-images.githubusercontent.com/68144687/166415758-69893c3b-5b6d-4639-925c-a2a50c029c9c.png)
 
+(2022-05-05)
+- review 리스트 내용 출력
+
+![image](https://user-images.githubusercontent.com/68144687/167076411-a1188b27-0e7e-45f2-92d3-b9f3ce33c929.png)
+
+
+- review 추가하기
+
+![image](https://user-images.githubusercontent.com/68144687/167076418-665af3c0-1658-48a2-b86c-924b0f8e588f.png)
+
+- 페이징 기법 적용하여, 순서대로 볼수있게 하자!
+- 글쓰기, 저장버튼 위치 옮겨야함
