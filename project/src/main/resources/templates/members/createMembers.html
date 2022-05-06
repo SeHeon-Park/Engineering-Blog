@@ -40,7 +40,9 @@
             <input type="text" th:field="*{major}" class="form-control"
                    placeholder="전공을 입력하세요">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <br>
+        <button type="submit" class="btn btn-outline-primary">제출</button>
+        <a type="button" th:href="@{/}" class="btn btn-outline-danger">취소</a>
     </form>
     <br/>
     <div th:replace="fragments/footer :: footer" />

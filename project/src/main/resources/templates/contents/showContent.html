@@ -38,15 +38,13 @@
         </tr>
         </thead>
         <tbody>
-            <tr th:each="subject : ${subjectForms}">
-                <td href="#" th:text="${subject.subjectName}"></td>
+            <tr  th:each="subject : ${subjectForms}">
+                <td>
+                    <a th:text="${subject.subjectName}" href="#" th:href="'javascript:review('+${subject.subjectId}+')'"
+                       class="btn btn-toolbar"></a>
+                </td>
                 <td th:text="${subject.credit}"></td>
                 <td th:text="${subject.week}"></td>
-                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                <td>
-                    <a href="#" th:href="'javascript:review('+${subject.subjectId}+')'"
-                       class="btn btn-success">Review</a>
-                </td>
             </tr>
         </tbody>
     </table>

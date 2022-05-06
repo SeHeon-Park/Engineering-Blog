@@ -23,13 +23,15 @@
             <p th:if="${#fields.hasErrors('title')}"
                th:errors="*{title}">Incorrect date</p>
         </div>
+        <br>
         <div class="form-group">
             <label th:for="credit">내용</label>
             <input type="text" th:field="*{content}" class="form-control"
-                   placeholder="학점을 고르시오">
+                   placeholder="내용을 입력하세요" style="height: 600px; padding-bottom: 560px">
         </div>
         <br>
-        <button type="submit" class="btn btn-primary">저장</button>
+        <button type="submit" class="btn btn-outline-primary">저장</button>
+        <a type="button" th:href="@{/reviewList/{id}(id=${subjectId})}" class="btn btn-outline-primary">목록</a>
     </form>
     <br/>
     <div th:replace="fragments/footer :: footer" />

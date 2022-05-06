@@ -25,9 +25,9 @@ public class ReviewSubject {
     @JoinColumn(name = "subject_id")
     private Subject subject;
 
-    public ReviewSubject(String title, String content, LocalDate day) {
+    public ReviewSubject(String title, String content) {
         this.title = title;
         this.content = content;
-        this.day = day;
+        this.day = LocalDate.now();
     }
 }

@@ -4,24 +4,28 @@
 
 <head>
     <meta></meta>
+<!--    <link rel="stylesheet" href="/webjars/bootstrap/3.3.5/css/bootstrap.min.css">-->
 </head>
 
 <style>
     .fieldError {
         border-color: #bd2130;
     }
-     tbody>tr {
-         counter-increment: n;
-     }
-    tbody>tr>td:first-child:before {
-        content: counter(n) " ";
-    }
+    /* tbody>tr {*/
+    /*     counter-increment: n;*/
+    /* }*/
+    /*tbody>tr>td:first-child:before {*/
+    /*    content: counter(n) " ";*/
+    /*}*/
 </style>
 <body>
+
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-    <h1 th:text="${subjectName}"></h1>
-    <table class="table table-light">
+    <div class="jumbotron">
+        <h1 th:text="${subjectName}"></h1>
+    </div>
+    <table class="table table-hover">
         <thead>
         <tr>
             <th>번호</th>
@@ -30,17 +34,75 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="review : ${reviewSubjectForm}">
-            <td></td>
+        <tr th:each="review, iterator : ${reviewSubjects}">
+            <td th:text="${reviewSubjects.totalElements - ((reviewSubjects.pageable.pageNumber * reviewSubjects.pageable.pageSize) + iterator.index)}"></td>
             <td th:text="${review.title}"></td>
             <td th:text="${review.day}"></td>
         </tr>
         </tbody>
     </table>
-    <a href="#" th:href="'javascript:write('+${subjectId}+')'"
-       class="btn btn-success">글쓰기</a>
 </div>
-<div th:replace="fragments/footer :: footer" />
+</div>
+<div class="container">
+    <!-- 전역 변수 선언 -->
+    <nav
+            th:with="
+                pageNumber = ${reviewSubjects.pageable.pageNumber},
+                pageSize = ${reviewSubjects.pageable.pageSize},
+                totalPages = ${reviewSubjects.totalPages},
+                startPage = ${T(Math).floor(pageNumber / pageSize) * pageSize + 1},
+                tempEndPage = ${startPage + pageSize - 1},
+                endPage = (${tempEndPage < totalPages ? tempEndPage : totalPages})"
+            aria-label="Page navigation"
+    >
+            <ul class="pagination">
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                <li th:classappend="${pageNumber < pageSize} ? 'disalble': 'active'" class="page-item">
+                    <a class="page-link" th:href="@{/reviewList/{id}?(id=${subjectId}, page=0)}" aria-label="First">
+                        <span>&laquo;</span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </li>
+
+                <!-- 이전으로 이동 -->
+                <li th:classappend="${reviewSubjects.first} ? 'disabled'" class="page-item">
+                    <a class="page-link" th:href="${reviewSubjects.first} ? '#' : @{/reviewList/{id}?(id=${subjectId},page=${pageNumber - 1})}" aria-label="Previous">
+                        <span aria-hidden="true">&lt;</span>
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+
+                <!-- 특정 페이지로 이동 -->
+                <li th:each="page: ${#numbers.sequence(startPage, endPage)}" th:classappend="${page == pageNumber + 1} ? 'active'" class="page-item">
+                    <a th:text="${page}" class="page-link" th:href="@{/reviewList/{id}?(id=${subjectId}, page=${page - 1})}"></a>
+                </li>
+
+                <!-- 다음으로 이동 -->
+                <li th:classappend="${reviewSubjects.last} ? 'disabled'" class="page-item">
+                    <a class="page-link" th:href="${reviewSubjects.last} ? '#' : @{/reviewList/{id}?(id=${subjectId}, page=${pageNumber + 1})}" aria-label="Next">
+                        <span aria-hidden="true">&gt;</span>
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+
+                <!-- 마지막으로 이동 -->
+                <li th:classappend=" ${T(Math).floor(totalPages / pageSize) * pageSize - 1 <= startPage} ? 'disalble': 'active'" class="page-item">
+                    <a class="page-link" th:href="@{/reviewList/{id}?(id=${subjectId}, page=${totalPages - 1})}">
+                        <span>&raquo;</span>
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                &emsp;&emsp;&emsp;&emsp;&nbsp;
+                <li>
+                    <a href="#" th:href="'javascript:write('+${subjectId}+')'"
+                           class="btn btn-outline-danger">글쓰기
+                    </a>
+                </li>
+            </ul>
+
+            </nav>
+<div th:replace="fragments/footer :: footer"></div>
+    </div>
 </body>
 <script>
     function write(id) {

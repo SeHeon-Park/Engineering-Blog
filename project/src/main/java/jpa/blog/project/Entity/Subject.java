@@ -26,13 +26,17 @@ public class Subject {
     @JoinColumn(name = "member_id")
     private Member member;
 
-    @OneToMany(mappedBy = "subject")
+    @OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
     private List<ReviewSubject> reviewSubjects = new ArrayList<>();
 
     public Subject(String week, String subjectName, int credit) {
         this.week = week;
         this.subjectName = subjectName;
         this.credit = credit;
+    }
+
+    public Subject(String subjectName) {
+        this.subjectName = subjectName;
     }
 
     public Long getMemberId(){

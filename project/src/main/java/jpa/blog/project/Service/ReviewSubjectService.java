@@ -1,12 +1,11 @@
 package jpa.blog.project.Service;
 
-import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.ReviewSubject;
 import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.repository.ReviewSubjectRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -33,8 +32,7 @@ public class ReviewSubjectService {
         return reviewSubjectRepository.findAll();
     }
 
-    public Page<ReviewSubject> findReviews(Long id){
-        PageRequest pageRequest = PageRequest.of(0, 3);
-        return reviewSubjectRepository.findReviewSubjectById(id, pageRequest);
+    public Page<ReviewSubject> findReviews(Long id, Pageable pageable){
+        return reviewSubjectRepository.findReviewSubjectById(id, pageable);
     }
 }
