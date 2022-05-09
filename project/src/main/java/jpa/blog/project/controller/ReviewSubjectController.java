@@ -15,8 +15,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.stream.Collectors;
+import java.time.LocalDate;
 
 
 @Controller
@@ -39,7 +40,7 @@ public class ReviewSubjectController {
 
     @GetMapping("/reviewList/new/{subjectId}")
     public String showCreateReview(@PathVariable("subjectId") Long id, Model model){
-        model.addAttribute("ReviewSubjectForm", new ReviewSubjectForm());
+        model.addAttribute("reviewSubjectForm", new ReviewSubjectForm());
         model.addAttribute("subjectId", id);
         return "/review/createReview";
     }
@@ -49,6 +50,47 @@ public class ReviewSubjectController {
         Subject findSubject = subjectService.findById(id);
         ReviewSubject reviewSubject = new ReviewSubject(form.getTitle(), form.getContent());
         reviewSubjectService.addReviewSubject(findSubject, reviewSubject);
+        return "redirect:/reviewList/{subjectId}";
+    }
+
+    @GetMapping("/review/show/{reviewId}")
+    public String showReview(@PathVariable("reviewId") Long reviewId,
+                             Model model
+    ){
+        ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
+        Long subjectId = findReview.getSubject().getSubjectId();
+        model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        model.addAttribute("subjectId", subjectId);
+        model.addAttribute("reviewId", findReview.getReviewId());
+        return "review/showReview";
+    }
+
+    @GetMapping("/review/edit/{reviewId}")
+    public String editReview(@PathVariable("reviewId") Long reviewId, Model model){
+        ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
+        model.addAttribute("reviewSubjectForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        System.out.println("DSAASD"+ findReview.getDay());
+        return "review/editReview";
+    }
+
+    @PostMapping("/review/edit/{reviewId}")
+    public String editReview(ReviewSubjectForm form){
+        Long reviewId = form.getReviewId();
+        ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
+        findReview.setTitle(form.getTitle());
+        findReview.setContent(form.getContent());
+        findReview.setDay(LocalDate.now());
+        System.out.println("adsdsadsa"+ form.getDay());
+
+        reviewSubjectService.save(findReview);
+        return "redirect:/review/show/{reviewId}";
+    }
+
+    @PostMapping("/review/delete/{subjectId}/{reviewId}")
+    public String deleteReview(@PathVariable("reviewId") Long reviewId,
+                               @PathVariable("subjectId") Long subjectId
+                               ){
+        reviewSubjectService.deleteOne(reviewId);
         return "redirect:/reviewList/{subjectId}";
     }
 }

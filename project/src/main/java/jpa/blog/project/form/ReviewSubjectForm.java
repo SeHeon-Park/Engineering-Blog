@@ -14,10 +14,12 @@ public class ReviewSubjectForm {
     private Long reviewId;
     private String title;
     private String content;
+    private LocalDate day;
 
-    public ReviewSubjectForm(Long reviewId, String title, String content) {
+    public ReviewSubjectForm(Long reviewId, String title, String content, LocalDate day) {
         this.reviewId = reviewId;
         this.title = title;
         this.content = content;
+        this.day = day;
     }
 }

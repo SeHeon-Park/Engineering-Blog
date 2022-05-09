@@ -6,7 +6,6 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 @Getter @Setter
@@ -15,7 +14,7 @@ public class ReviewSubject {
     @Id
     @GeneratedValue
     @Column(name = "review_subject_id")
-    private Long ReviewId;
+    private Long reviewId;
 
     private String title;
     private String content;

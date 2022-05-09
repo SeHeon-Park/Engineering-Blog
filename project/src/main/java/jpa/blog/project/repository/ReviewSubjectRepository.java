@@ -15,4 +15,8 @@ public interface ReviewSubjectRepository extends JpaRepository<ReviewSubject, Lo
     @Query("select r from ReviewSubject r " +
             "where r.subject.subjectId = :subjectId")
     Page<ReviewSubject> findReviewSubjectById(@Param("subjectId") Long id, Pageable pageable);
+
+    ReviewSubject findReviewSubjectByReviewId(Long reviewId);
+
+    void deleteReviewSubjectByReviewId(Long id);
 }

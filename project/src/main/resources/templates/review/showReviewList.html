@@ -36,7 +36,11 @@
         <tbody>
         <tr th:each="review, iterator : ${reviewSubjects}">
             <td th:text="${reviewSubjects.totalElements - ((reviewSubjects.pageable.pageNumber * reviewSubjects.pageable.pageSize) + iterator.index)}"></td>
-            <td th:text="${review.title}"></td>
+            <td>
+                <a th:text="${review.title}" href="#" th:href="'javascript:show('+${review.reviewId}+')'"
+                   class="btn btn-toolbar"></a>
+            </td>
+            </td>
             <td th:text="${review.day}"></td>
         </tr>
         </tbody>
@@ -109,6 +113,14 @@
         const form = document.createElement("form");
         form.setAttribute("method", "GET");
         form.setAttribute("action", "/reviewList/new/" + id);
+        document.body.appendChild(form);
+        form.submit();
+    }
+
+    function show(id){
+        const form = document.createElement("form");
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/review/show/" + id);
         document.body.appendChild(form);
         form.submit();
     }

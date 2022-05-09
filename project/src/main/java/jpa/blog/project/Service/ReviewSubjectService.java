@@ -35,4 +35,13 @@ public class ReviewSubjectService {
     public Page<ReviewSubject> findReviews(Long id, Pageable pageable){
         return reviewSubjectRepository.findReviewSubjectById(id, pageable);
     }
+
+    public ReviewSubject findOne(Long reviewId){
+        return reviewSubjectRepository.findReviewSubjectByReviewId(reviewId);
+    }
+
+    @Transactional
+    public void deleteOne(Long reviewId){
+        reviewSubjectRepository.deleteReviewSubjectByReviewId(reviewId);
+    }
 }
