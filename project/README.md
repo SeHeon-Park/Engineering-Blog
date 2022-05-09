@@ -95,3 +95,13 @@
 
 - 페이징 기법 적용하여, 순서대로 볼수있게 하자!
 - 글쓰기, 저장버튼 위치 옮겨야함
+
+(2022-05-07)
+- 페이징 기법 적용하여 게시판 처럼 구현
+
+![image](https://user-images.githubusercontent.com/68144687/167348709-c6bd3334-babd-4749-87df-562f42db4478.png)
+
+
+- 글쓰기 저장, 목록 버튼 구현
+
+![image](https://user-images.githubusercontent.com/68144687/167348715-a0a2144a-1933-4b1e-96c2-828c5c3a454b.png)
