@@ -8,7 +8,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String home(){
-        System.out.println("true = " + true);
         return "home";
     }
 }

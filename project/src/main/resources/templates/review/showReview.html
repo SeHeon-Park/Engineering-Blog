@@ -10,6 +10,10 @@
     .fieldError {
         border-color: #bd2130;
     }
+
+    .text_box{
+
+    }
 </style>
 <body>
 <div class="container">
@@ -18,12 +22,14 @@
         <div th:each="form: ${reviewForm}">
             <div class="form-group">
                 <label th:for="title">제목</label>
-                <div th:text="${form.title}"></div>
+                <hr>
+                <p th:text="${form.title}"></p>
             </div>
             <br>
             <div class="form-group">
                 <label th:for="content">내용</label>
-                <div th:text="${form.content}"></div>
+                <hr>
+                <p th:text="${form.content}"></p>
             </div>
         </div>
         <br>

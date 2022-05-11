@@ -1,11 +1,12 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/blog
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: sonamu0928*
 
   jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
     hibernate:
       ddl-auto: update
     properties:

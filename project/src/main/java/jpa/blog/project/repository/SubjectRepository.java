@@ -13,4 +13,6 @@ public interface SubjectRepository extends JpaRepository<Subject, Long> {
 
     Subject findSubjectBySubjectId(Long id);
 
+    @Query
+    void deleteBySubjectId(Long id);
 }

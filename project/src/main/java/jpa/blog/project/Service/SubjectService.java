@@ -46,5 +46,10 @@ public class SubjectService {
         subjectRepository.save(subject);
     }
 
+    @Transactional
+    public void delete(Long subjectId){
+        subjectRepository.deleteBySubjectId(subjectId);
+    }
+
 
 }

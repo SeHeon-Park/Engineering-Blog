@@ -45,6 +45,10 @@
                 </td>
                 <td th:text="${subject.credit}"></td>
                 <td th:text="${subject.week}"></td>
+                <td>
+                    <a href="#" th:href="'javascript:remove('+${subject.subjectId}+', '+${memberId}+')'"
+                       class="btn btn-danger">삭제</a>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -74,6 +78,18 @@
         form.setAttribute("action", "/reviewList/"+id);
         document.body.appendChild(form);
         form.submit();
+    }
+
+    function remove(subjectId, memberId) {
+        const yn = confirm("정말로 삭제 하시겠습니까?")
+        if(yn) {
+            const form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "/subjects/delete/" + subjectId + "/" + memberId);
+            document.body.appendChild(form);
+            form.submit();
+        }
+        else{}
     }
 
 </script>
