@@ -20,7 +20,7 @@ public class MemberFormController {
     private final MemberService memberService;
 
     @GetMapping(value = "/members/new")
-    public String createMemberForm(Model model) {
+    public String createMemberForm(@Valid Model model) {
         model.addAttribute("memberForm", new MemberForm());
         return "members/createMembers";
     }
@@ -28,7 +28,8 @@ public class MemberFormController {
     @PostMapping(value = "/members/new")
     public String createMember(MemberForm form) {
         Member member = new Member();
-        Member newMember = member.setMember(form.getName(), form.getGrade(), form.getStudentNumber(), form.getMajor());
+        Member newMember = member.setMember(form.getUid(), form.getUpw(), form.getName(), form.getGrade(), form.getStudentNumber(), form.getMajor());
+        System.out.println("asd");
         memberService.join(newMember);
         return "redirect:/";
     }

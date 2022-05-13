@@ -15,13 +15,12 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class MemberService implements UserDetailsService {
+//  implements UserDetailsService
+public class MemberService {
     private final MemberRepository memberRepository;
 
     @Transactional
     public Long join(Member member){
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        member.setUpw(encoder.encode(member.getPassword())); // 암호화
         memberRepository.save(member);
         return member.getMemberId();
     }
@@ -39,9 +38,9 @@ public class MemberService implements UserDetailsService {
         memberRepository.deleteById(memberId);
     }
 
-    @Override
-    public Member loadUserByUsername(String uid) throws UsernameNotFoundException {
-        return memberRepository.findByUid(uid)
-                .orElseThrow(() -> new UsernameNotFoundException((uid)));
-    }
+//    @Override
+//    public Member loadUserByUsername(String uid) throws UsernameNotFoundException {
+//        return memberRepository.findByUid(uid)
+//                .orElseThrow(() -> new UsernameNotFoundException((uid)));
+//    }
 }
