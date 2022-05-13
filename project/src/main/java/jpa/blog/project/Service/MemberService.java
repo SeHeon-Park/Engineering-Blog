@@ -1,6 +1,7 @@
 package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
+import jpa.blog.project.Entity.MemberContext;
 import jpa.blog.project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,8 +16,8 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-//  implements UserDetailsService
-public class MemberService {
+
+public class MemberService implements UserDetailsService{
     private final MemberRepository memberRepository;
 
     @Transactional
@@ -38,9 +39,13 @@ public class MemberService {
         memberRepository.deleteById(memberId);
     }
 
-//    @Override
-//    public Member loadUserByUsername(String uid) throws UsernameNotFoundException {
-//        return memberRepository.findByUid(uid)
-//                .orElseThrow(() -> new UsernameNotFoundException((uid)));
-//    }
+    @Override
+    public UserDetails loadUserByUsername(String uid) throws UsernameNotFoundException {
+        Member member = memberRepository.findByUid(uid)
+                .orElseThrow(() -> new UsernameNotFoundException((uid)));
+        MemberContext memberContext = new MemberContext(member);
+        List<Member> all = findAll();
+        System.out.println("입력: "+memberContext.getPassword());
+        return memberContext;
+    }
 }

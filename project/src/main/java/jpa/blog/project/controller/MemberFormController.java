@@ -29,7 +29,6 @@ public class MemberFormController {
     public String createMember(MemberForm form) {
         Member member = new Member();
         Member newMember = member.setMember(form.getUid(), form.getUpw(), form.getName(), form.getGrade(), form.getStudentNumber(), form.getMajor());
-        System.out.println("asd");
         memberService.join(newMember);
         return "redirect:/";
     }

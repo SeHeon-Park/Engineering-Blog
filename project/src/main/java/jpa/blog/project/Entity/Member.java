@@ -53,7 +53,7 @@ public class Member {
         Role role = new Role();
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         this.uid = uid;
-        this.upw = passwordEncoder.encode(upw);
+        this.upw =  "{bcrypt}"+passwordEncoder.encode(upw);
         role.setRoleName("BASIC");
         role.setMember(this);
         this.roles.add(role);
