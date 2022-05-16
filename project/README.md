@@ -111,17 +111,21 @@
 - 프로젝트 전체적인 기능 구현
 - 스프링 시큐리티를 활용한 로그인 회원가입 기능 추가 
 
+
 (~2022-05-16)
 - 스프링 시큐리티를 활용한 화원가입, 로그인, 로그아웃 기능 구현 완료
 
 ![image](https://user-images.githubusercontent.com/68144687/168557026-4839c263-4330-4f25-8c35-e6da877ee3de.png)
+
 (로그인 전)
 
 ![image](https://user-images.githubusercontent.com/68144687/168557103-306b9b58-0fd9-4fe5-9eb0-f7d999409bb7.png)
+
 (로그인 화면)
 
 ![image](https://user-images.githubusercontent.com/68144687/168557139-cf450c1b-37f9-4f3f-9845-a274d3270551.png)
-(로그인 )
+
+(로그인 후)
 
 
 - 전체적으로 정리 후 마무리 필요
