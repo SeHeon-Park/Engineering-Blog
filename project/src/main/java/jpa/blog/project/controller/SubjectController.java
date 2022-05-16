@@ -33,10 +33,10 @@ public class SubjectController {
         Member findMember = memberService.findOneBySubjectId(memberId);
         Subject subject = new Subject(subjectForm.getWeek(), subjectForm.getSubjectName(), subjectForm.getCredit());
         subjectService.addSubject(findMember, subject);
-        return "redirect:/subjects/show/{memberId}";
+        return "redirect:/subject/show/{memberId}";
     }
 
-    @GetMapping("/subjects/show/{id}")
+    @GetMapping("/subject/show/{id}")
     public String showSubjects(@ModelAttribute("searchSubject") SearchSubject searchSubject,
                                @PathVariable("id") Long id, Model model){
         List<Subject> findSubject = subjectService.findAllByInput(searchSubject, id);
@@ -51,13 +51,13 @@ public class SubjectController {
         return "/subjects/showSubjectList";
     }
 
-    @PostMapping("/subjects/delete/{subjectId}/{memberId}")
+    @PostMapping("/subject/delete/{subjectId}/{memberId}")
     public String deleteSubject(@PathVariable("subjectId") Long subjectId,
                                 @PathVariable("memberId") Long memberId)
                         {
 
         subjectService.delete(subjectId);
-        return "redirect:/subjects/show/{memberId}";
+        return "redirect:/subject/show/{memberId}";
     }
 
 }

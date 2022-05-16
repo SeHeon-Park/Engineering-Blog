@@ -85,7 +85,7 @@
         if(yn) {
             const form = document.createElement("form");
             form.setAttribute("method", "post");
-            form.setAttribute("action", "/subjects/delete/" + subjectId + "/" + memberId);
+            form.setAttribute("action", "/subject/delete/" + subjectId + "/" + memberId);
             document.body.appendChild(form);
             form.submit();
         }

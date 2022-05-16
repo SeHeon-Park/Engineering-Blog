@@ -67,7 +67,6 @@ public class ReviewSubjectController {
     public String editReview(@PathVariable("reviewId") Long reviewId, Model model){
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         model.addAttribute("reviewSubjectForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
-        System.out.println("DSAASD"+ findReview.getDay());
         return "review/editReview";
     }
 
@@ -78,7 +77,6 @@ public class ReviewSubjectController {
         findReview.setTitle(form.getTitle());
         findReview.setContent(form.getContent());
         findReview.setDay(LocalDate.now());
-        System.out.println("adsdsadsa"+ form.getDay());
 
         reviewSubjectService.save(findReview);
         return "redirect:/review/show/{reviewId}";

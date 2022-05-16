@@ -31,4 +31,9 @@ public class MemberForm {
         this.studentNumber = studentNumber;
         this.major = major;
     }
+
+    public MemberForm(Long memberId, String name) {
+        this.memberId = memberId;
+        this.name = name;
+    }
 }

@@ -16,7 +16,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional(readOnly = true)
-
 public class MemberService implements UserDetailsService{
     private final MemberRepository memberRepository;
 
@@ -39,13 +38,18 @@ public class MemberService implements UserDetailsService{
         memberRepository.deleteById(memberId);
     }
 
+    public Member findOneByUid(String uid){
+        Member member = memberRepository.findByUid(uid)
+                .orElseThrow(() -> new UsernameNotFoundException((uid)));
+        return member;
+    }
+
     @Override
     public UserDetails loadUserByUsername(String uid) throws UsernameNotFoundException {
         Member member = memberRepository.findByUid(uid)
                 .orElseThrow(() -> new UsernameNotFoundException((uid)));
         MemberContext memberContext = new MemberContext(member);
         List<Member> all = findAll();
-        System.out.println("입력: "+memberContext.getPassword());
         return memberContext;
     }
 }

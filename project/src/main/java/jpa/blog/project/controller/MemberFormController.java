@@ -19,13 +19,13 @@ public class MemberFormController {
 
     private final MemberService memberService;
 
-    @GetMapping(value = "/members/new")
+    @GetMapping(value = "/new")
     public String createMemberForm(@Valid Model model) {
         model.addAttribute("memberForm", new MemberForm());
         return "members/createMembers";
     }
 
-    @PostMapping(value = "/members/new")
+    @PostMapping(value = "/new")
     public String createMember(MemberForm form) {
         Member member = new Member();
         Member newMember = member.setMember(form.getUid(), form.getUpw(), form.getName(), form.getGrade(), form.getStudentNumber(), form.getMajor());
