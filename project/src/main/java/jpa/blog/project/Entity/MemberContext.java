@@ -19,7 +19,6 @@ public class MemberContext extends User {
 
     public MemberContext(Member member) {
         super(member.getUid(), member.getUpw(), getAuthorities(member.getRoles()));
-        System.out.println("객체안: " + member.getUpw());
         this.member = member;
     }
 
