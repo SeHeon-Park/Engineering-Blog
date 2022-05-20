@@ -9,7 +9,9 @@ plugins {
 	id 'org.springframework.boot' version '2.2.1.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
+	id 'war'
 }
+
 group = 'study'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
@@ -17,6 +19,12 @@ sourceCompatibility = '1.8'
 
 //apply plugin: 'io.spring.dependency-management'
 apply plugin: "com.ewerk.gradle.plugins.querydsl"
+apply plugin: 'war'
+bootWar {
+	archiveBaseName = '-'
+	archiveFileName = '-.war'
+	archiveVersion = "0.0.0"
+}
 
 configurations {
 	compileOnly {
@@ -50,6 +58,8 @@ dependencies {
 	implementation 'com.querydsl:querydsl-jpa'
 	//querydsl 추가
 	implementation 'com.querydsl:querydsl-apt'
+
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 //querydsl 추가
