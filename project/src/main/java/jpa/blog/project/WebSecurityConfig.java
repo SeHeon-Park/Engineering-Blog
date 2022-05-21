@@ -42,7 +42,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginProcessingUrl("/login_proc")
                     .defaultSuccessUrl("/", true) // 로그인 성공 후 리다이렉트 주소
                     .failureUrl("/formLogin")
-                    .failureHandler(customFailureHandler)
                 .and()
                     .logout()
                     .logoutSuccessUrl("/")

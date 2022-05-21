@@ -21,7 +21,7 @@ public class Member {
     @Column(name = "member_id")
     private Long memberId;
 
-    @Column(nullable = false, unique = true, length=50)
+    @Column(nullable = false,  length=50)
     private String uid;
 
     @Column(nullable = false, length=200)
