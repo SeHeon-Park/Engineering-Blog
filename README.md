@@ -12,5 +12,5 @@ Spring Boot + JPA로 구현한 웹 블로그
 
 ### 메인페이지
 
-<img src = "(https://user-images.githubusercontent.com/68144687/170065409-8cea3acd-8eaa-4760-9f0e-dbd409a610ca.png)" width="50%" height="50%">
+<img src = "https://user-images.githubusercontent.com/68144687/170065409-8cea3acd-8eaa-4760-9f0e-dbd409a610ca.png" width="50%" height="50%">
 
