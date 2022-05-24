@@ -13,7 +13,7 @@ Spring Boot + JPA로 구현한 웹 블로그
 ### 메인페이지
 
 
-<img src = "https://user-images.githubusercontent.com/68144687/170066870-2ed472fb-2120-474f-b546-48400034f852.png" width="40%" height="40%">  <img src = "https://user-images.githubusercontent.com/68144687/170068204-9ca9bcac-4690-45e6-bbc1-ec56b9304512.png" width="40%" height="39%">
+<img src = "https://user-images.githubusercontent.com/68144687/170066870-2ed472fb-2120-474f-b546-48400034f852.png" width="40%" height="40%">  <img src = "https://user-images.githubusercontent.com/68144687/170068204-9ca9bcac-4690-45e6-bbc1-ec56b9304512.png" width="40%" height="38.5%">
 
 
 ### 회원가입 및 로그인 
