@@ -16,6 +16,7 @@ Spring Boot + JPA로 구현한 웹 블로그
 - 로그인 전 페이지, 로그인 후 페이지
 ### 회원가입 및 로그인 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68144687/170073038-f69f6bb3-8e58-4167-8d3d-a86dd405eb73.gif)
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/68144687/170073368-ad6e80a5-d11b-497d-a736-cbf9e36cdc3c.gif)
 
 - 이름, 아이디, 비밀번호는 필수 입력이며, 아이디 또한 중복되면 안된다. 
 - 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용해야한다.
