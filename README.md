@@ -19,5 +19,6 @@ Spring Boot + JPA로 구현한 웹 블로그
 - 이름, 아이디, 비밀번호는 필수 입력이며, 아이디 또한 중복되면 안된다. 
 - 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용해야한다.
 ### 과목별 리스트 및 과목 추가 기능
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/68144687/170070982-add1677e-ae4a-4923-b239-e4804e598e09.gif)
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68144687/170071158-a7bf0680-4c0b-4bba-8296-9c21b156fba4.gif)
+
 
