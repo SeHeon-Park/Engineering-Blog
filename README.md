@@ -11,5 +11,6 @@ Spring Boot + JPA로 구현한 웹 블로그
 ## 시스템 기능 구성
 
 ### 메인페이지
-<img src = "https://user-images.githubusercontent.com/68144687/170064832-dc813ee1-605e-4aaf-9450-ee018807d309.png" width="30%" height="30%">
+
+<img src = "(https://user-images.githubusercontent.com/68144687/170065409-8cea3acd-8eaa-4760-9f0e-dbd409a610ca.png)" width="50%" height="50%">
 
