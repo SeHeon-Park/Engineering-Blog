@@ -23,5 +23,5 @@ Spring Boot + JPA로 구현한 웹 블로그
 ### 과목별 리스트 및 과목 추가 기능
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/68144687/170074541-d42ce91f-a105-4b5b-88fc-9488499ee9fb.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
-- 과목명과 요일을 하나만 선택해서 검색 가능
+- 과목명과 요일  하나만 선택해서 검색 가능
 
