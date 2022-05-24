@@ -1,5 +1,5 @@
 ## Description
-Spring Boot + JPA로 구현한 웹 블로그
+Spring Boot + JPA로 구현한 웹 블로그\n
 URL: http://3.39.184.90:8080/
 
 ## 사용 라이브러리
