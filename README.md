@@ -18,8 +18,8 @@ URL: http://3.39.184.90:8080/
 ### 회원가입 및 로그인 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68144687/170073038-f69f6bb3-8e58-4167-8d3d-a86dd405eb73.gif)
 ![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/68144687/170073368-ad6e80a5-d11b-497d-a736-cbf9e36cdc3c.gif)
-- 이름, 아이디, 비밀번호는 필수 입력이며, 아이디 또한 중복되면 안된다. 
-- 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용해야한다.
+- 이름, 아이디, 비밀번호는 필수 입력이며, 아이디 중복되면 안됨
+- 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용
 ### 과목별 리스트 및 과목 추가 기능
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/68144687/170074541-d42ce91f-a105-4b5b-88fc-9488499ee9fb.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
