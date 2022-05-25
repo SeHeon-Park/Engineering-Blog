@@ -1,9 +1,11 @@
 ## Description
 Spring Boot + JPA로 구현한 웹 블로그
 
-URL: http://3.39.184.90:8080/
+## 프로젝트 정보
+### URL
+http://3.39.184.90:8080/
 
-## 사용 라이브러리
+### 개발 스택
 - Spring Framework
 - Spring Security
 - JPA
