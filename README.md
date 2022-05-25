@@ -5,10 +5,10 @@ URL: http://3.39.184.90:8080/
 
 ## 사용 라이브러리
 - Spring Framework
+- Spring Security
 - JPA
 - MySql
 - Thymleaf
-- Spring Security
 
 ## 시스템 기능 구성
 
