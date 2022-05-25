@@ -27,5 +27,5 @@ URL: http://3.39.184.90:8080/
 - 과목 삭제 
 ### 게시판 형태의 글 기록
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/68144687/170183309-c6a796a2-6cc4-4313-88d4-1de27637a657.gif)
-- 게시판 형태(페이징 사용)
+- 게시판 형태
 - 글쓰기, 수정, 삭제 기능
