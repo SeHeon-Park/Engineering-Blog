@@ -1,5 +1,5 @@
 ## Description
-Spring Boot + JPA로 구현한 웹 블로그
+Spring Boot + JPA로 구현한 과목별로 내용을 정리 해놓을 수 있는 기술 블로그
 
 ## 프로젝트 정보
 ### URL
@@ -12,7 +12,7 @@ http://3.39.184.90:8080/
 - MySql
 - Thymleaf
 
-## 시스템 기능 구성
+## 프로젝트 결과물
 
 ### 메인페이지
 <img src = "https://user-images.githubusercontent.com/68144687/170066870-2ed472fb-2120-474f-b546-48400034f852.png" width="40%" height="40%">  <img src = "https://user-images.githubusercontent.com/68144687/170068204-9ca9bcac-4690-45e6-bbc1-ec56b9304512.png" width="40%" height="38.2%">    
