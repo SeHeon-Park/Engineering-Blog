@@ -24,8 +24,8 @@ URL: http://3.39.184.90:8080/
 ![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/68144687/170074541-d42ce91f-a105-4b5b-88fc-9488499ee9fb.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
 - 과목명과 요일 하나만 선택해서 검색 가능
-- 과목 삭제 
+- 과목 추가, 검색, 
 ### 게시판 형태의 글 기록
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/68144687/170183309-c6a796a2-6cc4-4313-88d4-1de27637a657.gif)
-- 게시판 형태
+- 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
