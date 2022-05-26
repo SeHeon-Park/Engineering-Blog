@@ -12,7 +12,7 @@ http://3.39.184.90:8080/
 - MySql
 - Thymleaf
 
-### 코드 분석
+### 코드 정리
 https://velog.io/@qtwe153/Make-Blog-Project (작성중)
 
 ## 프로젝트 결과물
