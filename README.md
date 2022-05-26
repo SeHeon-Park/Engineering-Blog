@@ -12,6 +12,9 @@ http://3.39.184.90:8080/
 - MySql
 - Thymleaf
 
+### 코드 분석
+https://velog.io/@qtwe153/Make-Blog-Project (작성중)
+
 ## 프로젝트 결과물
 
 ### 메인페이지
