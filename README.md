@@ -13,7 +13,7 @@ http://3.39.184.90:8080/
 - Thymleaf
 
 ### 코드 정리
-https://velog.io/@qtwe153/Make-Blog-Project (작성중)
+https://velog.io/@qtwe153/series/Make-Blog(작성중)
 
 ## 프로젝트 결과물
 
