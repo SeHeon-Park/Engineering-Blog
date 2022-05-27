@@ -6,7 +6,7 @@ Spring Boot + JPA로 구현한 과목별로 내용을 정리 해놓을 수 있�
 http://3.39.184.90:8080/
 
 ### 개발 스택
-- Spring Framework
+- Spring Boot
 - Spring Security
 - JPA
 - MySql
