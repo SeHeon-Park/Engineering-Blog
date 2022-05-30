@@ -1,5 +1,6 @@
 package jpa.blog.project.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import jpa.blog.project.Entity.ReviewSubject;
 import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.Service.ReviewSubjectService;
@@ -12,11 +13,14 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -44,7 +48,17 @@ public class ReviewSubjectController {
     }
 
     @PostMapping("/reviewList/new/{subjectId}")
-    public String createReview(@PathVariable("subjectId") Long id, ReviewSubjectForm form){
+    public String createReview(@PathVariable("subjectId") Long id,
+                               @Valid ReviewSubjectForm form,
+                               Errors errors, Model model){
+        if (errors.hasErrors()){
+            model.addAttribute("ReviewSubjectForm", form);
+            Map<String, String> validatorResult = reviewSubjectService.validateHandling(errors);
+            for (String key : validatorResult.keySet()) {
+                model.addAttribute(key, validatorResult.get(key)); //(오류난 변수 이름, 오류메시지)
+            }
+            return "/review/createReview";
+        }
         Subject findSubject = subjectService.findById(id);
         ReviewSubject reviewSubject = new ReviewSubject(form.getTitle(), form.getContent());
         reviewSubjectService.addReviewSubject(findSubject, reviewSubject);
@@ -71,7 +85,16 @@ public class ReviewSubjectController {
     }
 
     @PostMapping("/review/edit/{reviewId}")
-    public String editReview(ReviewSubjectForm form){
+    public String editReview(@Valid ReviewSubjectForm form,
+                             Errors errors, Model model){
+        if (errors.hasErrors()){
+            model.addAttribute("ReviewSubjectForm", form);
+            Map<String, String> validatorResult = reviewSubjectService.validateHandling(errors);
+            for (String key : validatorResult.keySet()) {
+                model.addAttribute(key, validatorResult.get(key)); //(오류난 변수 이름, 오류메시지)
+            }
+            return "/review/editReview";
+        }
         Long reviewId = form.getReviewId();
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         findReview.setTitle(form.getTitle());

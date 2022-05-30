@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -12,7 +15,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class ReviewSubjectForm {
     private Long reviewId;
+    @NotBlank(message = "제목을 입력해 주세요.")
     private String title;
+    @Column(length = 1000)
     private String content;
     private LocalDate day;
 

@@ -17,10 +17,9 @@ public class ReviewSubject {
     @Column(name = "review_subject_id")
     private Long reviewId;
 
-    @NotNull(message = "제목을 입력해 주세요.")
     private String title;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(length = 1000)
     private String content;
     private LocalDate day;
 

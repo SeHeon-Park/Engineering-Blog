@@ -18,10 +18,9 @@
         <div class="form-group">
             <label th:for="title">제목</label>
             <input type="text" th:field="*{title}" class="form-control"
-                   placeholder="제목을 입력하세요"
-                   th:class="${#fields.hasErrors('title')}? 'form-controlfieldError' : 'form-control'">
+                   placeholder="제목을 입력하세요">
             <p th:if="${#fields.hasErrors('title')}"
-               th:errors="*{title}">Incorrect date</p>
+               th:errors="*{title}" style="color:red"></p>
         </div>
         <br>
         <div class="form-group">
