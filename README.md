@@ -38,7 +38,6 @@ https://velog.io/@qtwe153
 
 ## update!
 ### 마크 다운 적용
-![image](https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png)
-![image](https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png)
+<img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="40%" height="40%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="40%" height="40%">
 
 
