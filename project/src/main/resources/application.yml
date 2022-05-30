@@ -1,8 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/blog?serverTimezone=UTC&allowPublicKeyRetrieval=true
-    username: root
+#    ?serverTimezone=UTC&allowPublicKeyRetrieval=true
+    url: jdbc:mysql://database.cbrxpiqol1fu.ap-northeast-2.rds.amazonaws.com:3306/blog
+    username: qtwe153
     password: sonamu0928*
 
   jpa:
