@@ -35,9 +35,16 @@ https://velog.io/@qtwe153
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
 
+![image](https://user-images.githubusercontent.com/68144687/170992668-3d6d2651-8ece-4153-bd85-10bfb2ee09f9.png)
 
 ## update!
 ### 마크 다운 적용
 <img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="50%" height="50%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="50%" height="50%">
+
+
+
+
+https://user-images.githubusercontent.com/68144687/170996306-386c2554-b74a-4d44-b3a0-e7963a016d15.mp4
+
 
 
