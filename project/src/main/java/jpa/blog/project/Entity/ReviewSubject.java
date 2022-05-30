@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @Entity
@@ -16,7 +17,10 @@ public class ReviewSubject {
     @Column(name = "review_subject_id")
     private Long reviewId;
 
+    @NotNull(message = "제목을 입력해 주세요.")
     private String title;
+
+    @Column(columnDefinition = "TEXT")
     private String content;
     private LocalDate day;
 

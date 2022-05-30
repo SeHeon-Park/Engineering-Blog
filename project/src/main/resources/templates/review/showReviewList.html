@@ -63,6 +63,7 @@
     >
             <ul class="pagination">
                 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+                <!-- 처음으로 이동 -->
                 <li th:classappend="${pageNumber < pageSize} ? 'disalble': 'active'" class="page-item">
                     <a class="page-link" th:href="@{/reviewList/{id}?(id=${subjectId}, page=0)}" aria-label="First">
                         <span>&laquo;</span>
