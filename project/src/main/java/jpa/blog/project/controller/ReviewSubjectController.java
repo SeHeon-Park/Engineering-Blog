@@ -88,7 +88,8 @@ public class ReviewSubjectController {
     public String editReview(@Valid ReviewSubjectForm form,
                              Errors errors, Model model){
         if (errors.hasErrors()){
-            model.addAttribute("ReviewSubjectForm", form);
+            System.out.println("asd");
+            model.addAttribute("reviewSubjectForm", form);
             Map<String, String> validatorResult = reviewSubjectService.validateHandling(errors);
             for (String key : validatorResult.keySet()) {
                 model.addAttribute(key, validatorResult.get(key)); //(오류난 변수 이름, 오류메시지)

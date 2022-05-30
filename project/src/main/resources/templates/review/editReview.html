@@ -30,14 +30,14 @@
         </div>
         <br>
         <button type="submit" class="btn btn-outline-primary">저장</button>
-        <a type="#" th:href="@{/review/show/{id}(id=${reviewId})}" class="btn btn-outline-primary">취소</a>
+        <a type="#" th:href="@{/review/show/{id}(id=${reviewSubjectForm.reviewId})}" class="btn btn-outline-primary">취소</a>
     </form>
     <br/>
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->
 </body>
 <script th:inline="javascript">
-    let id = [[${reviewId}]];
+    let id = [[${reviewSubjectForm.reviewId}]];
     let form = document.getElementById("form1");
     form.setAttribute("action", "/review/edit/" + id);
 </script>
