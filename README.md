@@ -34,3 +34,7 @@ https://velog.io/@qtwe153
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/68144687/170183309-c6a796a2-6cc4-4313-88d4-1de27637a657.gif)
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
+
+
+## update!
+### 마크 다운 적용
