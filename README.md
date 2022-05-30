@@ -34,3 +34,10 @@ https://velog.io/@qtwe153
 ![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/68144687/170183309-c6a796a2-6cc4-4313-88d4-1de27637a657.gif)
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
+
+
+## update!
+### 마크 다운 적용
+<img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="50%" height="50%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="50%" height="50%">
+
+
