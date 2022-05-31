@@ -19,7 +19,7 @@ public class ReviewSubject {
 
     private String title;
 
-    @Column(length = 1000)
+    @Column(columnDefinition = "LONGTEXT")
     private String content;
     private LocalDate day;
 

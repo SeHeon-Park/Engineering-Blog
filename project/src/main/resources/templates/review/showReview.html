@@ -27,7 +27,7 @@
             <br>
             <div class="form-group">
                 <hr>
-                <div th:utext="${@commonUtil.markdown(form.content)}"></div>
+                <div th:utext="${@commonUtil.markdown(form.content)}" style= "white-space: normal"></div>
             </div>
         </div>
         <br>
@@ -37,7 +37,9 @@
         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a href="#" th:href="'javascript:remove('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">삭제</a>
     </form>
-    <hr>
+<!--    <hr>-->
+<!--    <a href="#" th:href="'javascript:prev('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">이전글</a>-->
+<!--    <a href="#" th:href="'javascript:next('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">다음글</a>-->
     <br/>
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->
@@ -60,5 +62,19 @@
         }
         else{}
     }
+
+    // function prev(id) {
+    //     const form = document.getElementById("form1")
+    //     form.setAttribute("method", "GET");
+    //     form.setAttribute("action", "/review/show/" + id);
+    //     form.submit();
+    // }
+    //
+    // function next(id) {
+    //     const form = document.getElementById("form1")
+    //     form.setAttribute("method", "GET");
+    //     form.setAttribute("action", "/review/show/" + id);
+    //     form.submit();
+    // }
 </script>
 </html>

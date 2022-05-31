@@ -17,7 +17,7 @@ public class ReviewSubjectForm {
     private Long reviewId;
     @NotBlank(message = "제목을 입력해 주세요.")
     private String title;
-    @Column(length = 1000)
+    @Column(columnDefinition = "LONGTEXT")
     private String content;
     private LocalDate day;
 
