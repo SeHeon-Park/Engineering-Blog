@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.validation.Valid;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -71,6 +72,21 @@ public class ReviewSubjectController {
     ){
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         Long subjectId = findReview.getSubject().getSubjectId();
+        List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
+        int index = reviews.indexOf(findReview);
+        if(index != 0){
+            model.addAttribute("tf_prev", true);
+        }
+        else{
+            model.addAttribute("tf_prev", false);
+        }
+        if(index != reviews.size()-1){
+            model.addAttribute("tf_next", true);
+        }
+        else{
+            model.addAttribute("tf_next", false);
+        }
+
         model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
         model.addAttribute("subjectId", subjectId);
         model.addAttribute("reviewId", findReview.getReviewId());
@@ -88,7 +104,6 @@ public class ReviewSubjectController {
     public String editReview(@Valid ReviewSubjectForm form,
                              Errors errors, Model model){
         if (errors.hasErrors()){
-            System.out.println("asd");
             model.addAttribute("reviewSubjectForm", form);
             Map<String, String> validatorResult = reviewSubjectService.validateHandling(errors);
             for (String key : validatorResult.keySet()) {
@@ -112,5 +127,51 @@ public class ReviewSubjectController {
                                ){
         reviewSubjectService.deleteOne(reviewId);
         return "redirect:/reviewList/{subjectId}";
+    }
+
+    @GetMapping("/review/prev/{reviewId}")
+    public String showReviewPrev(@PathVariable("reviewId") Long reviewId,
+                                 Model model
+    ){
+        ReviewSubject review = reviewSubjectService.findOne(reviewId);
+        Long subjectId = review.getSubject().getSubjectId();
+        List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
+        int index = reviews.indexOf(review);
+        ReviewSubject findReview = reviews.get(index-1);
+        System.out.println("인덱스: " + index);
+        if(index != 1){
+            model.addAttribute("tf_prev", true);
+        }
+        else{
+            model.addAttribute("tf_prev", false);
+        }
+        model.addAttribute("tf_next", true);
+        model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        model.addAttribute("subjectId", subjectId);
+        model.addAttribute("reviewId", findReview.getReviewId());
+        return "review/showReview";
+    }
+
+    @GetMapping("/review/next/{reviewId}")
+    public String showReviewNext(@PathVariable("reviewId") Long reviewId,
+                                 Model model
+    ){
+        ReviewSubject review = reviewSubjectService.findOne(reviewId);
+        Long subjectId = review.getSubject().getSubjectId();
+        List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
+        int index = reviews.indexOf(review);
+        ReviewSubject findReview = reviews.get(index+1);
+        System.out.println("인덱스: " + index);
+        if(index != reviews.size()-2){
+            model.addAttribute("tf_next", true);
+        }
+        else{
+            model.addAttribute("tf_next", false);
+        }
+        model.addAttribute("tf_prev", true);
+        model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        model.addAttribute("subjectId", subjectId);
+        model.addAttribute("reviewId", findReview.getReviewId());
+        return "review/showReview";
     }
 }

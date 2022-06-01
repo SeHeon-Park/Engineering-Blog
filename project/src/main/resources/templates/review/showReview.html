@@ -34,12 +34,12 @@
         <a type="button" th:href="@{/reviewList/{id}(id=${subjectId})}" class="btn btn-outline-primary">목록</a>
 
         <a href="#" th:href="'javascript:edit('+${reviewId}+')'" class="btn  btn-outline-primary">수정</a>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+        <a th:classappend="${tf_prev.equals(false)} ? 'disabled'" href="#" th:href="'javascript:prev('+${reviewId}+')'" class="btn  btn-primary">&lt;</a>
+        <a th:classappend="${tf_next.equals(false)} ? 'disabled'" href="#" th:href="'javascript:next('+${reviewId}+')'" class="btn  btn-primary">&gt;</a>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a href="#" th:href="'javascript:remove('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">삭제</a>
     </form>
-<!--    <hr>-->
-<!--    <a href="#" th:href="'javascript:prev('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">이전글</a>-->
-<!--    <a href="#" th:href="'javascript:next('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">다음글</a>-->
     <br/>
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->
@@ -63,18 +63,18 @@
         else{}
     }
 
-    // function prev(id) {
-    //     const form = document.getElementById("form1")
-    //     form.setAttribute("method", "GET");
-    //     form.setAttribute("action", "/review/show/" + id);
-    //     form.submit();
-    // }
-    //
-    // function next(id) {
-    //     const form = document.getElementById("form1")
-    //     form.setAttribute("method", "GET");
-    //     form.setAttribute("action", "/review/show/" + id);
-    //     form.submit();
-    // }
+    function prev(id) {
+        const form = document.getElementById("form1")
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/review/prev/" + id);
+        form.submit();
+    }
+
+    function next(id) {
+        const form = document.getElementById("form1")
+        form.setAttribute("method", "GET");
+        form.setAttribute("action", "/review/next/" + id);
+        form.submit();
+    }
 </script>
 </html>

@@ -19,4 +19,8 @@ public interface ReviewSubjectRepository extends JpaRepository<ReviewSubject, Lo
     ReviewSubject findReviewSubjectByReviewId(Long reviewId);
 
     void deleteReviewSubjectByReviewId(Long id);
+
+    @Query("select r from ReviewSubject r " +
+            "where r.subject.subjectId = :subjectId")
+    List<ReviewSubject> findReviewSubjectBySubjectId(@Param("subjectId") Long id);
 }
