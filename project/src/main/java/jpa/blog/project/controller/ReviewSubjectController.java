@@ -138,7 +138,6 @@ public class ReviewSubjectController {
         List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
         int index = reviews.indexOf(review);
         ReviewSubject findReview = reviews.get(index-1);
-        System.out.println("인덱스: " + index);
         if(index != 1){
             model.addAttribute("tf_prev", true);
         }
@@ -161,7 +160,6 @@ public class ReviewSubjectController {
         List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
         int index = reviews.indexOf(review);
         ReviewSubject findReview = reviews.get(index+1);
-        System.out.println("인덱스: " + index);
         if(index != reviews.size()-2){
             model.addAttribute("tf_next", true);
         }
