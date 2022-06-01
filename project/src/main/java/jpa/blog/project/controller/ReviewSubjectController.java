@@ -113,4 +113,6 @@ public class ReviewSubjectController {
         reviewSubjectService.deleteOne(reviewId);
         return "redirect:/reviewList/{subjectId}";
     }
+
+
 }
