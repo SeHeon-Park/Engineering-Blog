@@ -58,4 +58,17 @@ public class ReviewSubjectService {
         }
         return validatorResult;
     }
+
+    public ReviewSubject findPrevOne(ReviewSubject review, Long subjectId){
+        List<ReviewSubject> reviews = reviewSubjectRepository.findReviewSubjectBySubjectId(subjectId);
+        int index = reviews.indexOf(review);
+        if(index == 0) {
+            return null;
+        }
+        return reviews.get(index-1);
+    }
+
+    public List<ReviewSubject> findReviewSubjectBySubjectId(Long subjectId){
+        return reviewSubjectRepository.findReviewSubjectBySubjectId(subjectId);
+    }
 }

@@ -34,7 +34,10 @@
         <a type="button" th:href="@{/reviewList/{id}(id=${subjectId})}" class="btn btn-outline-primary">목록</a>
 
         <a href="#" th:href="'javascript:edit('+${reviewId}+')'" class="btn  btn-outline-primary">수정</a>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp;
+        <a th:classappend="${tf_prev.equals(false)} ? 'disabled'" href="#" th:href="'javascript:prev('+${reviewId}+')'" class="btn  btn-primary">&lt;</a>
+        <a th:classappend="${tf_next.equals(false)} ? 'disabled'" href="#" th:href="'javascript:next('+${reviewId}+')'" class="btn  btn-primary">&gt;</a>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a href="#" th:href="'javascript:remove('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">삭제</a>
     </form>
     <br/>
@@ -63,14 +66,22 @@
     function prev(id) {
         const form = document.getElementById("form1")
         form.setAttribute("method", "GET");
+<<<<<<< HEAD
         form.setAttribute("action", "/review/show/" + id);
+=======
+        form.setAttribute("action", "/review/prev/" + id);
+>>>>>>> c5165e9543749848e65ef4d9b1ea95d0cf6c5f88
         form.submit();
     }
 
     function next(id) {
         const form = document.getElementById("form1")
         form.setAttribute("method", "GET");
+<<<<<<< HEAD
         form.setAttribute("action", "/review/show/" + id);
+=======
+        form.setAttribute("action", "/review/next/" + id);
+>>>>>>> c5165e9543749848e65ef4d9b1ea95d0cf6c5f88
         form.submit();
     }
 </script>
