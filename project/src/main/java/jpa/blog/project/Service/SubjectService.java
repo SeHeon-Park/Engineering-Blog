@@ -51,5 +51,4 @@ public class SubjectService {
         subjectRepository.deleteBySubjectId(subjectId);
     }
 
-
 }

@@ -15,20 +15,20 @@
     <div th:replace="fragments/bodyHeader :: bodyHeader"></div>
     <div class="jumbotron"></div>
     <div class="form-group">
-    <b>과목명 혹은 요일 검색</b>
+    <b>과목명 혹은 요일 검색&emsp;&emsp;&emsp;&nbsp;(해제 : 더블클릭)</b>
     <br>
     <form th:object="${searchSubject}" class="form-inline">
         <input type="text" th:field="*{subjectName}" class="formcontrol" placeholder="과목명을 입력하세요"/></input>
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week1" value="월"/>월
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week2" value="화"/>화
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week3" value="수"/>수
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week4" value="목"/>목
-        <input type="radio" th:field="*{week}" class="formcontrol" name="week5" value="금"/>금
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week1" value="월" ondblclick="this.checked=false"/>월
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week2" value="화" ondblclick="this.checked=false"/>화
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week3" value="수" ondblclick="this.checked=false"/>수
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week4" value="목" ondblclick="this.checked=false"/>목
+        <input type="radio" th:field="*{week}" class="formcontrol" name="week5" value="금" ondblclick="this.checked=false"/>금
         <button type="submit" class="btn btn-primary mb-2">검색</button></th>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-        <a  href="#" th:href="'javascript:createSubject('+${memberId}+')'"
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <a href="#" th:href="'javascript:createSubject('+${memberId}+')'"
            class="btn btn-outline-danger">과목 추가</a>
-        </form>
+    </form>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -45,7 +45,7 @@
                 </td>
                 <td th:text="${subject.credit}"></td>
                 <td th:text="${subject.week}"></td>
-                <td>
+                <td style="text-align: right">
                     <a href="#" th:href="'javascript:remove('+${subject.subjectId}+', '+${memberId}+')'"
                        class="btn btn-danger">삭제</a>
                 </td>

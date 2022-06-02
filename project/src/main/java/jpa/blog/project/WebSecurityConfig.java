@@ -1,6 +1,7 @@
 package jpa.blog.project;
 
 import jpa.blog.project.Service.MemberService;
+import jpa.blog.project.controller.CustomAuthFailureHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -17,8 +18,7 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final MemberService memberService;
-    private final AuthenticationFailureHandler customFailureHandler;
+    private final CustomAuthFailureHandler customFailureHandler;
 
 
     @Override
@@ -33,15 +33,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .disable()
                 .authorizeRequests()
                     .antMatchers("/", "/formLogin", "/new", "/uid/**").permitAll() // 누구나 접근 허용
-//                  .antMatchers("/members/**", "/subject/**", "/review/**", "/reviewList/**").hasAnyRole("USER")
-                    .antMatchers("/admin/**").hasAnyRole("ADMIN") // ADMIN만 접근 가능
+//                    .antMatchers("/members/**", "/subject/**", "/review/**", "/reviewList/**").hasAnyRole("USER")
+//                    .antMatchers("/members").hasAnyRole("ADMIN") // ADMIN만 접근 가능
                     .anyRequest().authenticated() // 나머지 요청들은 권한의 종류에 상관 없이 권한이 있어야 접근 가능
                 .and()
                     .formLogin()
                     .loginPage("/formLogin") // 로그인 페이지 링크
                     .loginProcessingUrl("/login_proc")
                     .defaultSuccessUrl("/", true) // 로그인 성공 후 리다이렉트 주소
-                    .failureUrl("/formLogin")
+                    .failureHandler(customFailureHandler)
                 .and()
                     .logout()
                     .logoutSuccessUrl("/")

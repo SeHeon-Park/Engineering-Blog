@@ -4,6 +4,7 @@ import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.MemberContext;
 import jpa.blog.project.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -53,7 +54,6 @@ public class MemberService implements UserDetailsService{
         Member member = memberRepository.findByUid(uid)
                 .orElseThrow(() -> new UsernameNotFoundException((uid)));
         MemberContext memberContext = new MemberContext(member);
-        List<Member> all = findAll();
         return memberContext;
     }
 
@@ -61,7 +61,6 @@ public class MemberService implements UserDetailsService{
         Map<String, String> validatorResult = new HashMap<>();
         for (FieldError error : errors.getFieldErrors()) {
             String validKeyName = String.format("valid_%s", error.getField());
-            System.out.println(validKeyName);
             validatorResult.put(validKeyName, error.getDefaultMessage());
         }
         return validatorResult;
