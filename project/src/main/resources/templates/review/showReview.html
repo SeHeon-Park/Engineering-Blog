@@ -36,11 +36,13 @@
             <a th:classappend="${tf_next.equals(false)} ? 'disabled'" href="#" th:href="'javascript:next('+${reviewId}+')'" class="btn  btn-primary"> &#10097;</a>
         </div>
             <br>
-        <a type="button" th:href="@{/reviewList/{id}(id=${subjectId})}" class="btn btn-outline-primary">목록</a>
-        <a href="#" th:href="'javascript:edit('+${reviewId}+')'" class="btn  btn-outline-primary">수정</a>
-        <div style="text-align: right;">
-            <a href="#" th:href="'javascript:remove('+${subjectId}+', '+${reviewId}+')'" class="btn  btn-danger">삭제</a>
-        </div>
+<!--        <nav>-->
+<!--            <ul>-->
+                <a type="button" th:href="@{/reviewList/{id}(id=${subjectId})}" class="btn btn-outline-primary">목록</a>
+                <a href="#" th:href="'javascript:edit('+${reviewId}+')'" class="btn  btn-outline-primary">수정</a>
+                <a href="#" th:href="'javascript:remove('+${subjectId}+', '+${reviewId}+')'" class="btn btn-danger" style="float: right">삭제</a>
+<!--            </ul>-->
+<!--        </nav>-->
     </form>
     <br/>
     <div th:replace="fragments/footer :: footer" />

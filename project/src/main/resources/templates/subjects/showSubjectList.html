@@ -25,9 +25,8 @@
         <input type="radio" th:field="*{week}" class="formcontrol" name="week4" value="목" ondblclick="this.checked=false"/>목
         <input type="radio" th:field="*{week}" class="formcontrol" name="week5" value="금" ondblclick="this.checked=false"/>금
         <button type="submit" class="btn btn-primary mb-2">검색</button></th>
-        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
         <a href="#" th:href="'javascript:createSubject('+${memberId}+')'"
-           class="btn btn-outline-danger">과목 추가</a>
+           class="btn btn-outline-danger" style="float: right">과목 추가</a>
     </form>
     <table class="table table-striped">
         <thead>
