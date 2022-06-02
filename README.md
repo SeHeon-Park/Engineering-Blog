@@ -47,8 +47,8 @@ https://velog.io/@qtwe153 (작성중)
 <img src = "https://user-images.githubusercontent.com/68144687/171633191-c86e32c8-196c-45a6-955a-d6ac86d482d6.png"  width="50%" height="50%">
 
 ### 기타
-- 과목 요일 검샘 라디오 버튼 체크 해제 기능
-- 리뷰리스트 페이지에서 과목 선택 페이지로 넘어가는 
+- 과목 요일 검 라디오 버튼 체크 해제 기능
+- 리뷰리스트 페이지에서 과목 선택 페이지로 넘어가는 기능
 
 
 
