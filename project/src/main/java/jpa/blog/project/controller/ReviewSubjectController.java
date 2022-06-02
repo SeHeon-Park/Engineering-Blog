@@ -128,7 +128,7 @@ public class ReviewSubjectController {
         reviewSubjectService.deleteOne(reviewId);
         return "redirect:/reviewList/{subjectId}";
     }
-    
+
     @GetMapping("/review/prev/{reviewId}")
     public String showReviewPrev(@PathVariable("reviewId") Long reviewId,
                                  Model model
@@ -172,5 +172,5 @@ public class ReviewSubjectController {
         model.addAttribute("reviewId", findReview.getReviewId());
         return "review/showReview";
     }
->>>>>>> c5165e9543749848e65ef4d9b1ea95d0cf6c5f88
+
 }
