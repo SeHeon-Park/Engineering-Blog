@@ -23,6 +23,7 @@ public class SubjectRepositoryQuery {
         List<Subject> empty = new ArrayList<>();
 
         if (searchSubject.getWeek() != null && searchSubject.getSubjectName() != null && searchSubject.getSubjectName() != ""){
+            System.out.println("1");
             return query
                     .select(subject)
                     .from(subject)
@@ -31,6 +32,7 @@ public class SubjectRepositoryQuery {
         }
 
         if (searchSubject.getWeek() != null) {
+            System.out.println(searchSubject.getWeek()+"2");
             return query
                     .select(subject)
                     .from(subject)
@@ -38,6 +40,7 @@ public class SubjectRepositoryQuery {
                     .fetch();
         }
         if (searchSubject.getSubjectName() != null && searchSubject.getSubjectName() != "") {
+            System.out.println("3");
             return query
                     .select(subject)
                     .from(subject)

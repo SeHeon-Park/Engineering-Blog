@@ -4,6 +4,8 @@ Spring Boot + JPA로 구현한 과목별로 내용을 정리 해놓을 수 있�
 ## 프로젝트 정보
 ### URL
 http://3.39.184.90:8080/
+- aws cpu 크레딧 소진(해결)
+- 새로운 인스턴스 생성하여 프로젝트 연결
 
 ### 개발 스택
 - Spring Boot
@@ -35,10 +37,13 @@ https://velog.io/@qtwe153 (작성중)
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
 
-## update!
-### 리뷰 작성 시 마크 다운 적용
+## update
+### 게시글 작성 시 마크다운 적용
 <img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="50%" height="50%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="50%" height="50%">
-- 마크다운 문법 적용
+- 마크다운 문법 사용 가능
+### 현재 게시글에서 바로 이전, 다음 게시글로 넘어가는 기능
+![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/68144687/171387648-bd5e477d-23a1-4468-b748-69d1f1f4f2d3.gif)
+
 
 
 

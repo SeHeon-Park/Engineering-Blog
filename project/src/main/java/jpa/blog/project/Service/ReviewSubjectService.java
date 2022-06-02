@@ -1,5 +1,6 @@
 package jpa.blog.project.Service;
 
+import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.ReviewSubject;
 import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.repository.ReviewSubjectRepository;
@@ -71,4 +72,5 @@ public class ReviewSubjectService {
     public List<ReviewSubject> findReviewSubjectBySubjectId(Long subjectId){
         return reviewSubjectRepository.findReviewSubjectBySubjectId(subjectId);
     }
+
 }

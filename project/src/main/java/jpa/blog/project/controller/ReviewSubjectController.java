@@ -1,6 +1,7 @@
 package jpa.blog.project.controller;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.ReviewSubject;
 import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.Service.ReviewSubjectService;
@@ -37,6 +38,7 @@ public class ReviewSubjectController {
         model.addAttribute("subjectName", findSubject.getSubjectName());
         model.addAttribute("subjectId", findSubject.getSubjectId());
         model.addAttribute("reviewSubjects", reviewSubjects);
+        model.addAttribute("memberId", findSubject.getMember().getMemberId());
 
         return "/review/showReviewList";
     }

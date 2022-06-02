@@ -19,8 +19,8 @@
             <label th:for="name">이름<b>*</b></label>
             <input type="text" th:field="*{name}" class="form-control"
                    placeholder="이름을 입력하세요">
-            <p th:if="${#fields.hasErrors('name')}"
-               th:errors="*{name}" style="color:red"></p>
+            <span th:if="${#fields.hasErrors('name')}"
+               th:errors="*{name}" style="color:red"></span>
         </div>
         <br>
 
@@ -28,10 +28,10 @@
             <label th:for="uid">아이디<b>*</b></label>
             <input type="text" th:field="*{uid}" class="form-control"
                    placeholder="아이디를 입력하세요">
-            <p th:if="${#fields.hasErrors('uid')}"
-               th:errors="*{uid}" style="color:red"></p>
+            <span th:if="${#fields.hasErrors('uid')}"
+               th:errors="*{uid}" style="color:red"></span>
             <div th:if="${uidMessage != null}">
-                <p style="color: red" th:text="${uidMessage}"></p>
+                <span style="color: red" th:text="${uidMessage}"></span>
             </div>
         </div>
 
@@ -40,8 +40,8 @@
             <label th:for="upw">비밀번호<b>*</b></label>
             <input type="password" th:field="*{upw}" class="form-control"
                    placeholder="비밀번호를 입력하세요">
-            <p th:if="${#fields.hasErrors('upw')}"
-               th:errors="*{upw}" style="color:red"></p>
+            <span th:if="${#fields.hasErrors('upw')}"
+               th:errors="*{upw}" style="color:red"></span>
         </div>
         <br>
         <div class="form-group">

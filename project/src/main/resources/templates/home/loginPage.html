@@ -10,8 +10,12 @@
     .fieldError {
         border-color: #bd2130;
     }
+
 </style>
 <body>
+<br>
+<br>
+<br>
 <div class="container">
     <div th:replace="fragments/bodyHeader :: bodyHeader"/>
     <form action="/login_proc" method = "post">
@@ -19,6 +23,7 @@
         <input type="text" name = "username" class="form-control" placeholder="아이디를 입력해주세요"/>
         <label>비밀번호</label>
         <input type="password" name = "password" class="form-control" placeholder="비밀번호를 입력해주세요"/>
+        <span th:if="${error}" th:text="${exception}" style="color:red"></span>
         <br>
         <button type="submit" value="Login "class="btn btn-outline-primary">로그인</button>
     </form>
