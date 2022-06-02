@@ -44,9 +44,10 @@ https://velog.io/@qtwe153 (작성중)
 ### 현재 게시글에서 바로 이전, 다음 게시글로 넘어가는 기능
 ![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/68144687/171387648-bd5e477d-23a1-4468-b748-69d1f1f4f2d3.gif)
 ### 로그인 실패시 오류메시지 출력
-![image](https://user-images.githubusercontent.com/68144687/171633191-c86e32c8-196c-45a6-955a-d6ac86d482d6.png)
-### 과목 요일 검샘 라디오 버튼 체크 해제 기능
-### 리뷰리스트 페이지에서 과목 선택 페이지로 넘어가는 
+<img src = "https://user-images.githubusercontent.com/68144687/171633191-c86e32c8-196c-45a6-955a-d6ac86d482d6.png"  width="50%" height="50%">
+### 기타
+- 과목 요일 검샘 라디오 버튼 체크 해제 기능
+- 리뷰리스트 페이지에서 과목 선택 페이지로 넘어가는 
 
 
 
