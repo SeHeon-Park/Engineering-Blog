@@ -37,7 +37,7 @@ https://velog.io/@qtwe153 (작성중)
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
 
-## update
+## update!
 ### 게시글 작성 시 마크다운 적용
 <img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="50%" height="50%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="50%" height="50%">
 - 마크다운 문법 사용 가능
