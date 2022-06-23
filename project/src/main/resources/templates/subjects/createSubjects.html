@@ -7,46 +7,65 @@
 </head>
 
 <style>
-    .fieldError {
-        border-color: #bd2130;
+    .text-white label{
+        color: #f8f9fa;
     }
 </style>
 <body>
-<div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-    <form role="form" id="form1" th:object="${subjectForm}" method="post">
-        <div class="form-group">
-            <label th:for="subjectName">과목명</label>
-            <input type="text" th:field="*{subjectName}" class="form-control"
-                   placeholder="과목명을 입력하세요"
-                   th:class="${#fields.hasErrors('subjectName')}? 'form-controlfieldError' : 'form-control'">
-            <p th:if="${#fields.hasErrors('subjectName')}"
-               th:errors="*{subjectName}">Incorrect date</p>
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Home</a>
+    </div>
+</nav>
+<header class="masthead">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="text-white">
+                <form role="form" id="form1" th:object="${subjectForm}" method="post">
+                    <div class="form-group">
+                        <label th:for="subjectName">과목명</label>
+                        <input type="text" th:field="*{subjectName}" class="form-control"
+                               placeholder="과목명을 입력하세요"
+                               th:class="${#fields.hasErrors('subjectName')}? 'form-controlfieldError' : 'form-control'">
+                        <p th:if="${#fields.hasErrors('subjectName')}"
+                           th:errors="*{subjectName}">Incorrect date</p>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="credit">학점</label>
+                        <input type="number" th:field="*{credit}" class="form-control" min="1" max="3"
+                               placeholder="학점을 고르시오" style="width:70px">
+                    </div>
+                    <br>
+                    <div>
+                        <label th:for="week">요일</label>
+                        <br>
+                        <input type="radio" th:field="*{week}"
+                               value="월">월
+                        <input type="radio" th:field="*{week}"
+                               value="화">화
+                        <input type="radio" th:field="*{week}"
+                               value="수">수
+                        <input type="radio" th:field="*{week}"
+                               value="목">목
+                        <input type="radio" th:field="*{week}"
+                               value="금">금
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-close-white">저장</button>
+                    <a type="button" th:href="@{/subject/show/{id}(id=${memberId})}" class="btn btn-close-white">목록</a>
+                </form>
+                </div>
+                <br>
+            </div> <!-- /container -->
         </div>
-        <div class="form-group">
-            <label th:for="credit">학점</label>
-            <input type="number" th:field="*{credit}" class="form-control" min="1" max="3"
-                   placeholder="학점을 고르시오" style="width:70px">
-        </div>
-        <div>
-            <label th:for="week">요일</label>
-            <br>
-            <input type="radio" th:field="*{week}"
-                   value="월">월
-            <input type="radio" th:field="*{week}"
-                   value="화">화
-            <input type="radio" th:field="*{week}"
-                   value="수">수
-            <input type="radio" th:field="*{week}"
-                   value="목">목
-            <input type="radio" th:field="*{week}"
-                   value="금">금
-        </div>
-        <br>
-        <button type="submit" class="btn btn-outline-primary">저장</button>
-        <a type="button" th:href="@{/subject/show/{id}(id=${memberId})}" class="btn btn-outline-primary">목록</a>
-    </form>
-    <br/>
+    </div>
+    </div>
+    </div>
+</header>
+
+
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->
 </body>
