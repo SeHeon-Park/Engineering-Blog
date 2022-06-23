@@ -20,7 +20,9 @@ https://velog.io/@qtwe153/series/Make-Blog
 ## 프로젝트 결과물
 
 ### 메인페이지
-<img src = "https://user-images.githubusercontent.com/68144687/170066870-2ed472fb-2120-474f-b546-48400034f852.png" width="40%" height="40%">  <img src = "https://user-images.githubusercontent.com/68144687/170068204-9ca9bcac-4690-45e6-bbc1-ec56b9304512.png" width="40%" height="38.2%">    
+![image](https://user-images.githubusercontent.com/68144687/175265333-775c9241-327f-453e-b12a-562966f17eb6.png)
+![image](https://user-images.githubusercontent.com/68144687/175265454-8f809e28-8ae7-47b0-84a6-c50caf9783e3.png)
+   
 - 로그인 전 페이지, 로그인 후 페이지
 ### 회원가입 및 로그인 
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68144687/170073038-f69f6bb3-8e58-4167-8d3d-a86dd405eb73.gif)
