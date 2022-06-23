@@ -45,8 +45,10 @@ public class ReviewSubjectController {
 
     @GetMapping("/reviewList/new/{subjectId}")
     public String showCreateReview(@PathVariable("subjectId") Long id, Model model){
+        Subject subject = subjectService.findById(id);
         model.addAttribute("reviewSubjectForm", new ReviewSubjectForm());
         model.addAttribute("subjectId", id);
+        model.addAttribute("subjectName", subject.getSubjectName());
         return "/review/createReview";
     }
 
@@ -74,6 +76,7 @@ public class ReviewSubjectController {
     ){
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         Long subjectId = findReview.getSubject().getSubjectId();
+        String subjectName = findReview.getSubject().getSubjectName();
         List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
         int index = reviews.indexOf(findReview);
         if(index != 0){
@@ -92,13 +95,16 @@ public class ReviewSubjectController {
         model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
         model.addAttribute("subjectId", subjectId);
         model.addAttribute("reviewId", findReview.getReviewId());
+        model.addAttribute("subjectName", subjectName);
         return "review/showReview";
     }
 
     @GetMapping("/review/edit/{reviewId}")
     public String editReview(@PathVariable("reviewId") Long reviewId, Model model){
+        String subjectName = reviewSubjectService.findOne(reviewId).getSubject().getSubjectName();
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         model.addAttribute("reviewSubjectForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        model.addAttribute("subjectName", subjectName);
         return "review/editReview";
     }
 
@@ -137,6 +143,7 @@ public class ReviewSubjectController {
     ){
         ReviewSubject review = reviewSubjectService.findOne(reviewId);
         Long subjectId = review.getSubject().getSubjectId();
+        String subjectName = review.getSubject().getSubjectName();
         List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
         int index = reviews.indexOf(review);
         ReviewSubject findReview = reviews.get(index-1);
@@ -150,6 +157,7 @@ public class ReviewSubjectController {
         model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
         model.addAttribute("subjectId", subjectId);
         model.addAttribute("reviewId", findReview.getReviewId());
+        model.addAttribute("subjectName", subjectName);
         return "review/showReview";
     }
 
@@ -159,6 +167,7 @@ public class ReviewSubjectController {
     ){
         ReviewSubject review = reviewSubjectService.findOne(reviewId);
         Long subjectId = review.getSubject().getSubjectId();
+        String subjectName = review.getSubject().getSubjectName();
         List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(subjectId);
         int index = reviews.indexOf(review);
         ReviewSubject findReview = reviews.get(index+1);
@@ -172,6 +181,7 @@ public class ReviewSubjectController {
         model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
         model.addAttribute("subjectId", subjectId);
         model.addAttribute("reviewId", findReview.getReviewId());
+        model.addAttribute("subjectName", subjectName);
         return "review/showReview";
     }
 }
