@@ -22,8 +22,8 @@ https://velog.io/@qtwe153/series/Make-Blog
 ### 메인페이지
 <img src = "https://user-images.githubusercontent.com/68144687/175265333-775c9241-327f-453e-b12a-562966f17eb6.png"  width="50%" height="50%"> 
 <img src = "https://user-images.githubusercontent.com/68144687/175265454-8f809e28-8ae7-47b0-84a6-c50caf9783e3.png"  width="50%" height="50%"> 
+
 - 로그인 전 페이지, 로그인 후 페이지
-- 
 - 최근에 작성된 포스터가 과목별로 두개씩 
 
 ### 회원가입 및 로그인 
