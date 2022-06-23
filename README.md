@@ -25,17 +25,17 @@ https://velog.io/@qtwe153/series/Make-Blog
    
 - 로그인 전 페이지, 로그인 후 페이지
 ### 회원가입 및 로그인 
-![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/68144687/170073038-f69f6bb3-8e58-4167-8d3d-a86dd405eb73.gif)
-![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/68144687/170073368-ad6e80a5-d11b-497d-a736-cbf9e36cdc3c.gif)
+![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/68144687/175268625-5a67212d-812b-459e-bb49-754bb6aa820a.gif)
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/68144687/175268836-136d0cc3-bfa0-461f-abc3-629331f98281.gif)
 - 이름, 아이디, 비밀번호는 필수 입력이며, 아이디 중복되면 안됨
 - 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용
 ### 과목별 리스트 및 과목 추가 기능
-![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/68144687/170074541-d42ce91f-a105-4b5b-88fc-9488499ee9fb.gif)
+![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/68144687/175269184-e4bc99d3-f5b1-4308-b274-ceb33e3a7367.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
 - 과목명과 요일 하나만 선택해서 검색 가능
 - 과목 추가, 검색 
 ### 게시판 형태의 글 기록
-![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/68144687/170183309-c6a796a2-6cc4-4313-88d4-1de27637a657.gif)
+![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/68144687/175269532-50f2a8ac-df01-4813-a0b2-fbea6bf57feb.gif)
 - 게시판 형태의 내용 기록
 - 글쓰기, 수정, 삭제 기능
 
