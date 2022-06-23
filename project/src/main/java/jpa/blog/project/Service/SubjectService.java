@@ -1,6 +1,7 @@
 package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
+import jpa.blog.project.Entity.ReviewSubject;
 import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.Entity.SearchSubject;
 import jpa.blog.project.repository.SubjectRepository;
@@ -18,6 +19,7 @@ public class SubjectService {
 
     private final SubjectRepository subjectRepository;
     private final SubjectRepositoryQuery subjectRepositoryQuery;
+    private final ReviewSubjectService reviewSubjectService;
 
     @Transactional
     public void save(Subject subject){

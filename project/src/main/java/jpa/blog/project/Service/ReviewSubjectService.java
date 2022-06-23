@@ -38,7 +38,7 @@ public class ReviewSubjectService {
     }
 
     public Page<ReviewSubject> findReviews(Long id, Pageable pageable){
-        return reviewSubjectRepository.findReviewSubjectById(id, pageable);
+        return reviewSubjectRepository.findReviewSubjectByIdTen(id, pageable);
     }
 
     public ReviewSubject findOne(Long reviewId){

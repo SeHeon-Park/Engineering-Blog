@@ -2,22 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header" />
 
-<head>
-    <meta></meta>
-</head>
-
-<style>
-    .fieldError {
-        border-color: #bd2130;
-    }
-
-    .text_box{
-
-    }
 </style>
+
 <body>
-<div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" type="#" th:href="@{/reviewList/{id}(id=${subjectId})}">&#10094; 목록</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout">로그아웃</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<header class="masthead" th:style="'background-image: url('+ @{/assets/img/record.png} +');'">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1 th:text="${subjectName}"></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container-sm">
     <form role="form" id="form1" th:object="${reviewForm}">
         <div th:each="form: ${reviewForm}">
             <div class="form-group">
@@ -32,8 +47,8 @@
         </div>
         <br>
         <div style="text-align: center">
-            <a th:classappend="${tf_prev.equals(false)} ? 'disabled'" href="#" th:href="'javascript:prev('+${reviewId}+')'" class="btn  btn-primary">&#10096; </a>
-            <a th:classappend="${tf_next.equals(false)} ? 'disabled'" href="#" th:href="'javascript:next('+${reviewId}+')'" class="btn  btn-primary"> &#10097;</a>
+            <a th:classappend="${tf_prev.equals(false)} ? 'disabled'" href="#" th:href="'javascript:prev('+${reviewId}+')'" class="btn btn-outline-dark">&#10096; 이전</a>
+            <a th:classappend="${tf_next.equals(false)} ? 'disabled'" href="#" th:href="'javascript:next('+${reviewId}+')'" class="btn btn-outline-dark">다음 &#10097;</a>
         </div>
             <br>
 <!--        <nav>-->
@@ -81,4 +96,7 @@
         form.submit();
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
 </html>

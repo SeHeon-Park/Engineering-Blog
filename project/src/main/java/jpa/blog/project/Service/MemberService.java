@@ -2,8 +2,14 @@ package jpa.blog.project.Service;
 
 import jpa.blog.project.Entity.Member;
 import jpa.blog.project.Entity.MemberContext;
+import jpa.blog.project.Entity.ReviewSubject;
+import jpa.blog.project.Entity.Subject;
 import jpa.blog.project.repository.MemberRepository;
+import jpa.blog.project.repository.ReviewSubjectRepository;
+import jpa.blog.project.repository.SubjectRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +29,8 @@ import java.util.Map;
 @Transactional(readOnly = true)
 public class MemberService implements UserDetailsService{
     private final MemberRepository memberRepository;
+    private final SubjectRepository subjectRepository;
+    private final ReviewSubjectRepository reviewSubjectRepository;
 
     @Transactional
     public Long join(Member member){
@@ -47,6 +55,15 @@ public class MemberService implements UserDetailsService{
         Member member = memberRepository.findByUid(uid)
                 .orElseThrow(() -> new UsernameNotFoundException((uid)));
         return member;
+    }
+
+    public Map<Subject, Page<ReviewSubject>> findReviewSubjects(Long memberId, Pageable pageable){
+        List<Subject> subjects = subjectRepository.findSubjectsByMemberId(memberId);
+        Map<Subject, Page<ReviewSubject>> map = new HashMap<>();
+        for (Subject s : subjects){
+            map.put(s, reviewSubjectRepository.findReviewSubjectByIdTwo(s.getSubjectId(), pageable));
+        }
+        return map;
     }
 
     @Override

@@ -2,73 +2,144 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="fragments/header :: header" />
 
-<head>
-    <meta></meta>
-</head>
-
 <style>
-    .fieldError {
-        border-color: #bd2130;
+    .text-white label{
+        color: #f8f9fa;
     }
 </style>
+
 <body>
-<div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-    <form role="form" action="/new" th:object="${memberForm}" method="post">
-        <div class="form-group">
-            <label th:for="name">이름<b>*</b></label>
-            <input type="text" th:field="*{name}" class="form-control"
-                   placeholder="이름을 입력하세요">
-            <span th:if="${#fields.hasErrors('name')}"
-               th:errors="*{name}" style="color:red"></span>
-        </div>
-        <br>
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Home</a>
+    </div>
+</nav>
+<header class="masthead">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <!--    <div th:replace="fragments/bodyHeader :: bodyHeader"/>-->
+                <div class="text-white">
+                <form role="form" action="/new" th:object="${memberForm}" method="post">
+                    <div class="form-group">
+                        <label th:for="name">이름<b>*</b></label>
+                        <input type="text" th:field="*{name}" class="form-control"
+                               placeholder="이름을 입력하세요">
+                        <span th:if="${#fields.hasErrors('name')}"
+                              th:errors="*{name}" style="color:red"></span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="uid">아이디<b>*</b></label>
+                        <input type="text" th:field="*{uid}" class="form-control"
+                               placeholder="아이디를 입력하세요">
+                        <span th:if="${#fields.hasErrors('uid')}"
+                              th:errors="*{uid}" style="color:red"></span>
+                        <div th:if="${uidMessage != null}">
+                            <span style="color: red" th:text="${uidMessage}"></span>
+                        </div>
+                    </div>
 
-        <div class="form-group">
-            <label th:for="uid">아이디<b>*</b></label>
-            <input type="text" th:field="*{uid}" class="form-control"
-                   placeholder="아이디를 입력하세요">
-            <span th:if="${#fields.hasErrors('uid')}"
-               th:errors="*{uid}" style="color:red"></span>
-            <div th:if="${uidMessage != null}">
-                <span style="color: red" th:text="${uidMessage}"></span>
-            </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="upw">비밀번호<b>*</b></label>
+                        <input type="password" th:field="*{upw}" class="form-control"
+                               placeholder="비밀번호를 입력하세요">
+                        <span th:if="${#fields.hasErrors('upw')}"
+                              th:errors="*{upw}" style="color:red"></span>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="grade">학년<b>*</b></label>
+                        <input type="number" th:field="*{grade}" class="form-control" min="1" max="4"
+                               placeholder="학년을 고르시오" style="width:70px">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="studentNumber">학번</label>
+                        <input type="text" th:field="*{studentNumber}" class="form-control"
+                               placeholder="학번을 입력하세요">
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label th:for="major">전공</label>
+                        <input type="text" th:field="*{major}" class="form-control"
+                               placeholder="전공을 입력하세요">
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-close-white">제출</button>
+                    <a type="button" th:href="@{/}" class="btn btn-close-white">취소</a>
+                </form>
+                </div>
+                <br>
+            </div> <!-- /container -->
         </div>
-
-        <br>
-        <div class="form-group">
-            <label th:for="upw">비밀번호<b>*</b></label>
-            <input type="password" th:field="*{upw}" class="form-control"
-                   placeholder="비밀번호를 입력하세요">
-            <span th:if="${#fields.hasErrors('upw')}"
-               th:errors="*{upw}" style="color:red"></span>
-        </div>
-        <br>
-        <div class="form-group">
-            <label th:for="grade">학년<b>*</b></label>
-            <input type="number" th:field="*{grade}" class="form-control" min="1" max="4"
-                   placeholder="학년을 고르시오" style="width:70px">
-        </div>
-        <br>
-        <div class="form-group">
-            <label th:for="studentNumber">학번</label>
-            <input type="text" th:field="*{studentNumber}" class="form-control"
-                   placeholder="학번을 입력하세요">
-        </div>
-        <br>
-        <div class="form-group">
-            <label th:for="major">전공</label>
-            <input type="text" th:field="*{major}" class="form-control"
-                   placeholder="전공을 입력하세요">
-        </div>
-        <br>
-        <button type="submit" class="btn btn-outline-primary">제출</button>
-        <a type="button" th:href="@{/}" class="btn btn-outline-primary">취소</a>
-    </form>
-    <br/>
-    <div th:replace="fragments/footer :: footer" />
-</div> <!-- /container -->
+    </div>
+    </div>
+    </div>
+</header>
+<div th:replace="fragments/footer :: footer" />
 </body>
+
+
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div th:replace="fragments/bodyHeader :: bodyHeader"/>-->
+<!--    <form role="form" action="/new" th:object="${memberForm}" method="post">-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="name">이름<b>*</b></label>-->
+<!--            <input type="text" th:field="*{name}" class="form-control"-->
+<!--                   placeholder="이름을 입력하세요">-->
+<!--            <span th:if="${#fields.hasErrors('name')}"-->
+<!--               th:errors="*{name}" style="color:red"></span>-->
+<!--        </div>-->
+<!--        <br>-->
+
+<!--        <div class="form-group">-->
+<!--            <label th:for="uid">아이디<b>*</b></label>-->
+<!--            <input type="text" th:field="*{uid}" class="form-control"-->
+<!--                   placeholder="아이디를 입력하세요">-->
+<!--            <span th:if="${#fields.hasErrors('uid')}"-->
+<!--               th:errors="*{uid}" style="color:red"></span>-->
+<!--            <div th:if="${uidMessage != null}">-->
+<!--                <span style="color: red" th:text="${uidMessage}"></span>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <br>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="upw">비밀번호<b>*</b></label>-->
+<!--            <input type="password" th:field="*{upw}" class="form-control"-->
+<!--                   placeholder="비밀번호를 입력하세요">-->
+<!--            <span th:if="${#fields.hasErrors('upw')}"-->
+<!--               th:errors="*{upw}" style="color:red"></span>-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="grade">학년<b>*</b></label>-->
+<!--            <input type="number" th:field="*{grade}" class="form-control" min="1" max="4"-->
+<!--                   placeholder="학년을 고르시오" style="width:70px">-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="studentNumber">학번</label>-->
+<!--            <input type="text" th:field="*{studentNumber}" class="form-control"-->
+<!--                   placeholder="학번을 입력하세요">-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <div class="form-group">-->
+<!--            <label th:for="major">전공</label>-->
+<!--            <input type="text" th:field="*{major}" class="form-control"-->
+<!--                   placeholder="전공을 입력하세요">-->
+<!--        </div>-->
+<!--        <br>-->
+<!--        <button type="submit" class="btn btn-outline-primary">제출</button>-->
+<!--        <a type="button" th:href="@{/}" class="btn btn-outline-primary">취소</a>-->
+<!--    </form>-->
+<!--    <br/>-->
+<!--    <div th:replace="fragments/footer :: footer" />-->
+<!--</div> &lt;!&ndash; /container &ndash;&gt;-->
+<!--</body>-->
 <script>
     function check(id) {
         const form = document.createElement("form");

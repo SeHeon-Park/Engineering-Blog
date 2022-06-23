@@ -2,51 +2,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments/header :: header" />
 
-<head>
-    <meta></meta>
-</head>
-
-<style>
-    .fieldError {
-        border-color: #bd2130;
-    }
-</style>
 <body>
-<div class="container">
-    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
-    <form role="form" id="form1" th:object="${subjectForm}" method="post">
-        <div class="form-group">
-            <label th:for="subjectName">과목명</label>
-            <input type="text" th:field="*{subjectName}" class="form-control"
-                   placeholder="과목명을 입력하세요"
-                   th:class="${#fields.hasErrors('subjectName')}? 'form-controlfieldError' : 'form-control'">
-            <p th:if="${#fields.hasErrors('subjectName')}"
-               th:errors="*{subjectName}">Incorrect date</p>
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="/">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="#" th:href="@{/subject/show/{id}(id=${memberId})}">&#10094; 목록</a></li>
+                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="/logout">로그아웃</a></li>
+            </ul>
         </div>
-        <div class="form-group">
-            <label th:for="credit">학점</label>
-            <input type="number" th:field="*{credit}" class="form-control" min="1" max="3"
-                   placeholder="학점을 고르시오" style="width:70px">
+    </div>
+</nav>
+<header class="masthead" th:style="'background-image:url('+ @{/assets/img/search.png} +');'">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Add subject</h1>
+                </div>
+            </div>
         </div>
-        <div>
-            <label th:for="week">요일</label>
-            <br>
-            <input type="radio" th:field="*{week}"
-                   value="월">월
-            <input type="radio" th:field="*{week}"
-                   value="화">화
-            <input type="radio" th:field="*{week}"
-                   value="수">수
-            <input type="radio" th:field="*{week}"
-                   value="목">목
-            <input type="radio" th:field="*{week}"
-                   value="금">금
-        </div>
+    </div>
+</header>
+<div class="container-sm">
+<form role="form" id="form1" th:object="${subjectForm}" method="post">
+    <div class="form-group">
+        <label th:for="subjectName">과목명</label>
+        <input type="text" th:field="*{subjectName}" class="form-control"
+               placeholder="과목명을 입력하세요"
+               th:class="${#fields.hasErrors('subjectName')}? 'form-controlfieldError' : 'form-control'">
+        <p th:if="${#fields.hasErrors('subjectName')}"
+           th:errors="*{subjectName}">Incorrect date</p>
+    </div>
+    <br>
+    <div class="form-group">
+        <label th:for="credit">학점</label>
+        <input type="number" th:field="*{credit}" class="form-control" min="1" max="3"
+               placeholder="학점을 고르시오" style="width:70px">
+    </div>
+    <br>
+    <div>
+        <label th:for="week">요일</label>
         <br>
-        <button type="submit" class="btn btn-outline-primary">저장</button>
-        <a type="button" th:href="@{/subject/show/{id}(id=${memberId})}" class="btn btn-outline-primary">목록</a>
-    </form>
-    <br/>
+        <input type="checkbox" th:field="*{week}" class="formcontrol" name="week" value="월" onclick='doOpenCheck(this)'/>월
+        <input type="checkbox" th:field="*{week}" class="formcontrol" name="week" value="화" onclick='doOpenCheck(this)'/>화
+        <input type="checkbox" th:field="*{week}" class="formcontrol" name="week" value="수" onclick='doOpenCheck(this)'/>수
+        <input type="checkbox" th:field="*{week}" class="formcontrol" name="week" value="목" onclick='doOpenCheck(this)'/>목
+        <input type="checkbox" th:field="*{week}" class="formcontrol" name="week" value="금" onclick='doOpenCheck(this)'/>금
+    </div>
+    <br>
+    <button type="submit" class="btn btn-outline-primary">저장</button>
+    <a type="button" th:href="@{/subject/show/{id}(id=${memberId})}" class="btn btn-outline-primary">취소</a>
+</form>
+</div>
     <div th:replace="fragments/footer :: footer" />
 </div> <!-- /container -->
 </body>
@@ -54,5 +67,17 @@
     let id = [[${memberId}]];
     let form = document.getElementById("form1");
     form.setAttribute("action", "/subject/new/" + id);
+
+    function doOpenCheck(chk) {
+        var obj = document.getElementsByName("week");
+        for (var i = 0; i < obj.length; i++) {
+            if (obj[i] != chk) {
+                obj[i].checked = false;
+            }
+        }
+    }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="/js/scripts.js"></script>
 </html>
