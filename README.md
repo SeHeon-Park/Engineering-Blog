@@ -41,13 +41,9 @@ https://velog.io/@qtwe153/series/Make-Blog
 
 ## update!
 ### 게시글 작성 시 마크다운 적용
-<img src = "https://user-images.githubusercontent.com/68144687/170991956-615ae356-39fa-4f55-895a-2b528eaff2f3.png"  width="50%" height="50%"> <img src = "https://user-images.githubusercontent.com/68144687/170991977-185c6297-8943-41f4-bc75-93c6908196ad.png" width="50%" height="50%">
 - 마크다운 문법 사용 가능
 ### 현재 게시글에서 바로 이전, 다음 게시글로 넘어가는 기능
-![ezgif com-gif-maker (7)](https://user-images.githubusercontent.com/68144687/171387648-bd5e477d-23a1-4468-b748-69d1f1f4f2d3.gif)
 ### 로그인 실패시 오류메시지 출력
-<img src = "https://user-images.githubusercontent.com/68144687/171633191-c86e32c8-196c-45a6-955a-d6ac86d482d6.png"  width="50%" height="50%">
-
 ### 기타
 - 과목 요일 검색 라디오 버튼 체크 해제 기능
 - 리뷰리스트 페이지에서 과목 선택 페이지로 넘어가는 기능
