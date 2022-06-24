@@ -72,8 +72,8 @@ public class ReviewSubjectController {
 
     @GetMapping("/review/show/{reviewId}")
     public String showReview(@PathVariable("reviewId") Long reviewId,
-                             Model model
-    ){
+                             Model model)
+    {
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         Long subjectId = findReview.getSubject().getSubjectId();
         String subjectName = findReview.getSubject().getSubjectName();
@@ -101,10 +101,11 @@ public class ReviewSubjectController {
 
     @GetMapping("/review/edit/{reviewId}")
     public String editReview(@PathVariable("reviewId") Long reviewId, Model model){
-        String subjectName = reviewSubjectService.findOne(reviewId).getSubject().getSubjectName();
+        Subject subject = reviewSubjectService.findOne(reviewId).getSubject();
         ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
         model.addAttribute("reviewSubjectForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
-        model.addAttribute("subjectName", subjectName);
+        model.addAttribute("subjectName", subject.getSubjectName());
+        model.addAttribute("subjectId", subject.getSubjectId());
         return "review/editReview";
     }
 
