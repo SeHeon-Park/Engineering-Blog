@@ -34,7 +34,7 @@ https://velog.io/@qtwe153/series/Make-Blog
 ### 과목별 리스트 및 과목 추가 기능
 ![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/68144687/175269184-e4bc99d3-f5b1-4308-b274-ceb33e3a7367.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
-- 과목명과 요일 하나만 선택해서 검색 가능
+- 과목명과 요일 선택해서 검색 가능
 - 과목 추가, 검색 
 ### 게시판 형태의 글 기록
 ![ezgif com-gif-maker (12)](https://user-images.githubusercontent.com/68144687/175269532-50f2a8ac-df01-4813-a0b2-fbea6bf57feb.gif)
