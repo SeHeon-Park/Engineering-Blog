@@ -64,10 +64,37 @@ public class ReviewSubjectController {
             }
             return "/review/createReview";
         }
+
         Subject findSubject = subjectService.findById(id);
         ReviewSubject reviewSubject = new ReviewSubject(form.getTitle(), form.getContent());
         reviewSubjectService.addReviewSubject(findSubject, reviewSubject);
-        return "redirect:/reviewList/{subjectId}";
+
+        Long reviewId = reviewSubject.getReviewId();
+        ReviewSubject findReview = reviewSubjectService.findOne(reviewId);
+        Long subjectId = findSubject.getSubjectId();
+        String subjectName = findSubject.getSubjectName();
+        List<ReviewSubject> reviews = reviewSubjectService.findReviewSubjectBySubjectId(id);
+
+        int index = reviews.indexOf(findReview);
+        if(index != 0){
+            model.addAttribute("tf_prev", true);
+        }
+        else{
+            model.addAttribute("tf_prev", false);
+        }
+        if(index != reviews.size()-1){
+            model.addAttribute("tf_next", true);
+        }
+        else{
+            model.addAttribute("tf_next", false);
+        }
+
+        model.addAttribute("reviewForm", new ReviewSubjectForm(findReview.getReviewId(), findReview.getTitle(), findReview.getContent(), findReview.getDay()));
+        model.addAttribute("subjectId", subjectId);
+        model.addAttribute("reviewId", findReview.getReviewId());
+        model.addAttribute("subjectName", subjectName);
+
+        return "review/showReview";
     }
 
     @GetMapping("/review/show/{reviewId}")
