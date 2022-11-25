@@ -4,8 +4,6 @@ Spring Boot + JPA로 구현한 과목별로 내용을 정리 해놓을 수 있�
 ## 프로젝트 정보
 ### URL
 http://3.39.184.90:8080/
-- aws cpu 크레딧 소진(해결)
-- 새로운 인스턴스 생성하여 프로젝트 연결
 
 ### 개발 스택
 - Spring Boot
@@ -29,8 +27,8 @@ https://velog.io/@qtwe153/series/Make-Blog
 ### 회원가입 및 로그인 
 ![ezgif com-gif-maker (9)](https://user-images.githubusercontent.com/68144687/175268625-5a67212d-812b-459e-bb49-754bb6aa820a.gif)
 ![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/68144687/175268836-136d0cc3-bfa0-461f-abc3-629331f98281.gif)
-- 이름, 아이디, 비밀번호는 필수 입력이며, 아이디는 중복되면 안됨
-- 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자를 사용
+- 이름, 아이디, 비밀번호는 필수 입력이며, 아이디는 중복 X
+- 비밀번호는 8~16자 영문 대 소문자, 숫자, 특수문자 사용
 ### 과목별 리스트 및 과목 추가 기능
 ![ezgif com-gif-maker (11)](https://user-images.githubusercontent.com/68144687/175269184-e4bc99d3-f5b1-4308-b274-ceb33e3a7367.gif)
 - 과목명과 요일을 만족하는 과목 리스트 검색
