@@ -1,5 +1,5 @@
 ## Description
-Spring Boot + JPA + Thymleaf로 구현한 과목별로 내용을 정리 해놓을 수 있는 기술 블로그
+Spring Boot + JPA + Thymleaf 로 구현한 과목별로 내용을 정리 해놓을 수 있는 기술 블로그
 
 ## 프로젝트 정보
 
