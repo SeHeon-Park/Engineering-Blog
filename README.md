@@ -3,15 +3,27 @@ Spring Boot + JPA로 구현한 과목별로 내용을 정리 해놓을 수 있�
 
 ## 프로젝트 정보
 
-### 개발 스택
+<details markdown="3">
+<summary>기술 스택</summary>
+
 - Spring Boot
 - Spring Security
 - JPA
 - MySql
 - Thymleaf
 
+</details>
+
+<details markdown="3">
+<summary>ERD</summary>
+
+![image](https://user-images.githubusercontent.com/68144687/217150007-68312cf7-6b76-4753-816e-b89aa8cd9012.png)
+
+</details>
+
 ### 코드 정리
 https://velog.io/@qtwe153/series/Make-Blog 
+
 
 ## 프로젝트 결과물
 
